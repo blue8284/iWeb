@@ -34,11 +34,11 @@ const filtersModule = {
     // Set max date to today
     setMaxDate() {
         if (this.elements.dateTo) {
-            const today = new Date().toISOString().split('T')[0];
+            const today = toLocalISODate(new Date());
             this.elements.dateTo.setAttribute('max', today);
         }
         if (this.elements.dateFrom) {
-            const today = new Date().toISOString().split('T')[0];
+            const today = toLocalISODate(new Date());
             this.elements.dateFrom.setAttribute('max', today);
         }
     },
@@ -67,7 +67,7 @@ const filtersModule = {
             });
         }
 
-        // Player filter — handled by chip click events, already bound in populatePlayerOptions
+        // Player filter - handled by chip click events, already bound in populatePlayerOptions
 
         // Date filters
         if (this.elements.dateFrom) {
@@ -103,7 +103,7 @@ const filtersModule = {
         if (this.elements.showRetiredGames) {
             this.elements.showRetiredGames.addEventListener('change', () => {
                 this.state.showRetiredGames = this.elements.showRetiredGames.checked;
-                // Clear game selection when toggling — retired games are removed from dropdown
+                // Clear game selection when toggling - retired games are removed from dropdown
                 this.state.games = [];
                 this.populateGameOptions();
                 this.onFiltersChanged();
@@ -128,12 +128,12 @@ const filtersModule = {
         const firstOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
 
         if (this.elements.dateFrom) {
-            this.elements.dateFrom.value = firstOfMonth.toISOString().split('T')[0];
-            this.state.dateFrom = firstOfMonth.toISOString().split('T')[0];
+            this.elements.dateFrom.value = toLocalISODate(firstOfMonth);
+            this.state.dateFrom = toLocalISODate(firstOfMonth);
         }
         if (this.elements.dateTo) {
-            this.elements.dateTo.value = today.toISOString().split('T')[0];
-            this.state.dateTo = today.toISOString().split('T')[0];
+            this.elements.dateTo.value = toLocalISODate(today);
+            this.state.dateTo = toLocalISODate(today);
         }
     },
 
@@ -178,7 +178,7 @@ const filtersModule = {
         });
     },
 
-    // ── Player Chips ───────────────────────────────────────────────
+    // -- Player Chips -------------------------------------------------
 
     // Populate player chips
     populatePlayerOptions() {
@@ -235,7 +235,7 @@ const filtersModule = {
         }
     },
 
-    // ── /Player Chips ──────────────────────────────────────────────
+    // -- /Player Chips ------------------------------------------------
 
     // Reset all filters to default state (authenticated user as default player)
     reset() {
@@ -264,13 +264,13 @@ const filtersModule = {
             const firstOfMonth = new Date();
             firstOfMonth.setDate(1);
             firstOfMonth.setHours(0, 0, 0, 0);
-            this.elements.dateFrom.value = firstOfMonth.toISOString().split('T')[0];
-            this.state.dateFrom = firstOfMonth.toISOString().split('T')[0];
+            this.elements.dateFrom.value = toLocalISODate(firstOfMonth);
+            this.state.dateFrom = toLocalISODate(firstOfMonth);
         }
         if (this.elements.dateTo) {
             const today = new Date();
-            this.elements.dateTo.value = today.toISOString().split('T')[0];
-            this.state.dateTo = today.toISOString().split('T')[0];
+            this.elements.dateTo.value = toLocalISODate(today);
+            this.state.dateTo = toLocalISODate(today);
         }
         if (this.elements.winsOnly) {
             this.elements.winsOnly.checked = false;
