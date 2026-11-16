@@ -1,0 +1,11 @@
+services:
+  portfolio-web-1:
+    image: nginx:alpine
+    container_name: portfolio-web-1
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8766:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../bga:/usr/share/nginx/sites/bga:ro
+      - ../film_dash:/usr/share/nginx/sites/film_dash:ro

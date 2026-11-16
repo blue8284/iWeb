@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Dashboard</title>
+    <meta name="description" content="Interactive film library dashboard — Browse, Watchlist, Stats & Exploration.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?nocache=9">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Hamburger button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">☰</button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-slot-mini">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="6" fill="var(--color-primary)" opacity="0.15"/>
+                        <path d="M6 10H26L24 24H8L6 10Z" fill="var(--color-primary)" opacity="0.5"/>
+                        <rect x="13" y="6" width="6" height="4" rx="1" fill="var(--color-primary)" opacity="0.3"/>
+                        <circle cx="16" cy="17" r="3" fill="var(--color-primary)" opacity="0.6"/>
+                    </svg>
+                </div>
+                <span class="sidebar-title">Film Dash</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="sidebar-item active" data-view="stats">
+                    <span>📊</span> Stats
+                </button>
+                <div class="sidebar-submenu" id="statsSubmenu">
+                    <button class="sidebar-subitem active" data-st="new">🆕 New Arrivals</button>
+                    <button class="sidebar-subitem" data-st="topdl"><svg class="icon-dl" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="3" x2="12" y2="15"/></svg> Top Downloads</button>
+                    <button class="sidebar-subitem" data-st="toprt">⭐ Top Rated</button>
+                    <button class="sidebar-subitem" data-st="people">🎭 Top Cast</button>
+                    <button class="sidebar-subitem" data-st="providers">📺 Where to Watch</button>
+                    <button class="sidebar-subitem" data-st="dist">📊 Distribution</button>
+                </div>
+                <button class="sidebar-item" data-view="browse">
+                    <span>📂</span> Browse
+                </button>
+                <button class="sidebar-item" data-view="watchlist">
+                    <span>📋</span> Watchlist
+                </button>
+            </nav>
+        </aside>
+
+        <main class="app-main">
+            <!-- Header thu gọn -->
+            <header class="dashboard-header collapsed">
+                <div class="header-brand">
+                    <div class="logo-slot-mini">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="6" fill="var(--color-primary)" opacity="0.15"/>
+                            <path d="M6 10H26L24 24H8L6 10Z" fill="var(--color-primary)" opacity="0.5"/>
+                            <rect x="13" y="6" width="6" height="4" rx="1" fill="var(--color-primary)" opacity="0.3"/>
+                            <circle cx="16" cy="17" r="3" fill="var(--color-primary)" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1>Film Dash</h1>
+                        <span class="header-subtitle" id="headerSubtitle">downloadable films</span>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <span id="filmCount" class="header-stat"></span>
+                    <button class="btn theme-toggle" id="themeToggle" title="Toggle dark mode">☀️</button>
+                </div>
+            </header>
+
+            <!-- Breadcrumb: thay đổi theo subtab -->
+            <div class="breadcrumb" id="breadcrumb">
+                <span class="bc-current">Stats</span>
+                <span class="bc-sep">/</span>
+                <span class="bc-sub">New Arrivals</span>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- ── Module 1: Stats ──────────────────────────── -->
+                <section class="module tab-panel active" id="statsModule">
+                    <div class="stats-tabs">
+                        <button class="st-tab active" data-st="new">🆕 New Arrivals</button>
+                        <button class="st-tab" data-st="topdl"><svg class="icon-dl" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="3" x2="12" y2="15"/></svg> Top Downloads</button>
+                        <button class="st-tab" data-st="toprt">⭐ Top Rated</button>
+                        <button class="st-tab" data-st="people">🎭 Top Cast</button>
+                        <button class="st-tab" data-st="providers">📺 Where to Watch</button>
+                        <button class="st-tab" data-st="dist">📊 Distribution</button>
+                    </div>
+                    <div id="statsContent" class="stats-content"></div>
+                </section>
+
+                <!-- ── Module 2: Watchlist ──────────────────────── -->
+                <section class="module tab-panel" id="watchlistModule">
+                    <div class="watchlist-header">
+                        <h2>📋 Watchlist</h2>
+                        <div class="watchlist-tabs">
+                            <button class="wl-tab active" data-wl="film">🎬 Film Watchlists</button>
+                            <button class="wl-tab" data-wl="person">👤 Person Watchlists</button>
+                        </div>
+                    </div>
+                    <div id="filmWatchlists" class="watchlist-container"></div>
+                    <div id="personWatchlists" class="watchlist-container hidden"></div>
+                </section>
+
+                <!-- ── Module 3: Browse ─────────────────────────── -->
+                <section class="module tab-panel" id="browseModule">
+                    <div class="browse-layout">
+                        <aside class="browse-filters">
+                            <h3>Filters</h3>
+                            <div class="filter-group">
+                                <label for="filterSearch">🔍 Search</label>
+                                <input type="text" id="filterSearch" placeholder="Film, actor..." class="filter-input">
+                            </div>
+                            <div class="filter-group">
+                                <label for="filterGenre">Genre</label>
+                                <select id="filterGenre" class="filter-select"><option value="">All</option></select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="filterYearFrom">Năm</label>
+                                <div class="filter-row">
+                                    <input type="number" id="filterYearFrom" placeholder="Từ" class="filter-input-sm">
+                                    <input type="number" id="filterYearTo" placeholder="Đến" class="filter-input-sm">
+                                </div>
+                            </div>
+                            <div class="filter-group">
+                                <label for="filterRatingMin">Rating ≥</label>
+                                <select id="filterRatingMin" class="filter-select">
+                                    <option value="">All</option>
+                                    <option value="8">8+</option>
+                                    <option value="7">7+</option>
+                                    <option value="6">6+</option>
+                                    <option value="5">5+</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="filterResolution">Resolution</label>
+                                <select id="filterResolution" class="filter-select">
+                                    <option value="">All</option>
+                                    <option value="2160p">4K</option>
+                                    <option value="1080p">1080p</option>
+                                    <option value="720p">720p</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Actors / Directors</label>
+                                <input type="text" id="filterPerson" placeholder="Actor or director name..." class="filter-input">
+                                <div id="personSuggestions" class="suggestions-box"></div>
+                            </div>
+                            <button class="btn btn-secondary" id="resetBrowseFilters">Reset</button>
+                        </aside>
+
+                        <div class="browse-results">
+                            <div class="browse-controls">
+                                <span id="browseCount" class="result-count"></span>
+                                <div class="browse-view-options">
+                                    <button class="view-btn active" data-view="grid">▦ Grid</button>
+                                    <button class="view-btn" data-view="list">☰ List</button>
+                                </div>
+                            </div>
+                            <div id="filmGrid" class="film-grid"></div>
+                            <div id="filmList" class="film-list hidden"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ── Floating Trailer Player ───────────────────────── -->
+    <div id="trailerPlayer" class="trailer-pip hidden">
+        <div class="trailer-pip-header">
+            <span class="trailer-pip-title">▶ Trailer</span>
+            <div class="trailer-pip-controls">
+                <button class="trailer-pip-minimize" id="trailerMinimize" title="Thu nhỏ">─</button>
+                <button class="trailer-pip-close" id="trailerClose" title="Đóng">✕</button>
+            </div>
+        </div>
+        <div class="trailer-pip-body">
+            <iframe id="trailerIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- ── Film Detail Modal ─────────────────────────────── -->
+    <div id="filmModal" class="modal-overlay hidden">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-header">
+                <h3 id="modalFilmTitle">🎬 Film Details</h3>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+    <!-- App Code -->
+    <script src="js/data.js?nocache=2"></script>
+    <script src="js/player.js"></script>
+    <script src="js/film-detail.js"></script>
+    <script src="js/browse.js"></script>
+    <script src="js/watchlist.js"></script>
+    <script src="js/stats.js?nocache=10"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

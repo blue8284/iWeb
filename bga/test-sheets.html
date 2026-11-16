@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Sheets Access</title>
+</head>
+<body>
+    <h1>Testing Google Sheets Access</h1>
+    <div id="results"></div>
+    
+    <script>
+        const SHEET_ID = '2PACX-1vQR473_3wvzUJNDAtu6S7jZGf-L8dbCxNB4xSoCOJlQMOQSf2feN2Zh91rH7tU06fcgdz0GHDpPUlWX';
+        const gids = {
+            fact_play: 611151317,
+            dim_user: 666894404,
+            dim_game: 1726316824,
+            agg_player_game: 1326005344
+        };
+        
+        async function testSheet(name, gid) {
+            const url = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?gid=${gid}&single=true&output=csv`;
+            console.log(`Testing ${name}: ${url}`);
+            
+            try {
+                const response = await fetch(url);
+                const status = response.status;
+                const text = await response.text();
+                const lines = text.split('\n').length;
+                
+                document.getElementById('results').innerHTML += 
+                    `<p>${name}: ✓ Status ${status}, ${lines} lines</p>`;
+                console.log(`✓ ${name}: ${status}, ${lines} lines`);
+            } catch (error) {
+                document.getElementById('results').innerHTML += 
+                    `<p>${name}: ✗ Error: ${error.message}</p>`;
+                console.error(`✗ ${name}:`, error);
+            }
+        }
+        
+        async function testAll() {
+            for (const [name, gid] of Object.entries(gids)) {
+                await testSheet(name, gid);
+            }
+        }
+        
+        testAll();
+    </script>
+</body>
+</html>

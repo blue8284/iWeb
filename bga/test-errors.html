@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Error Test</title>
+</head>
+<body>
+    <h1>JavaScript Syntax Check</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        const errors = [];
+        
+        // Capture all errors
+        window.addEventListener('error', (e) => {
+            errors.push({
+                message: e.message,
+                filename: e.filename,
+                lineno: e.lineno,
+                colno: e.colno
+            });
+            console.error('Error caught:', e.message, e.filename, e.lineno);
+        });
+        
+        // Load scripts in order
+        const scripts = [
+            './utils.js',
+            './data.js',
+            './filters.js',
+            './modules/player-profile.js',
+            './arena.js',
+            './rivalries.js',
+            './metagame.js',
+            './main.js'
+        ];
+        
+        let loadedCount = 0;
+        
+        scripts.forEach(src => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => {
+                loadedCount++;
+                output.innerHTML += `<p style="color: green;">✓ ${src} loaded</p>`;
+                if (loadedCount === scripts.length) {
+                    setTimeout(() => {
+                        if (errors.length > 0) {
+                            output.innerHTML += '<h2 style="color: red;">Errors Found:</h2>';
+                            errors.forEach(err => {
+                                output.innerHTML += `<pre style="color: red;">${err.filename}:${err.lineno}:${err.colno} - ${err.message}</pre>`;
+                            });
+                        } else {
+                            output.innerHTML += '<h2 style="color: green;">✓ All scripts loaded successfully!</h2>';
+                        }
+                    }, 1000);
+                }
+            };
+            script.onerror = () => {
+                output.innerHTML += `<p style="color: red;">✗ ${src} failed to load</p>`;
+            };
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>

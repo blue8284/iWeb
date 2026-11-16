@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Competition Dashboard</title>
+    <meta name="description" content="Interactive dashboard tracking board game competition metrics — win rates, rivalries, and metagame insights.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="player-profile.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <div class="header-brand">
+                <div class="logo-slot" id="logoSack">
+                    <img id="dashboardLogo" src="" alt="Logo" style="display:none;">
+                    <div class="logo-placeholder">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="6" fill="var(--color-primary)" opacity="0.15"/>
+                            <path d="M16 6L20 14H12L16 6Z" fill="var(--color-primary)" opacity="0.6"/>
+                            <path d="M10 14H22L20 22H12L10 14Z" fill="var(--color-primary)" opacity="0.4"/>
+                            <rect x="14" y="22" width="4" height="4" rx="1" fill="var(--color-primary)" opacity="0.3"/>
+                        </svg>
+                    </div>
+                </div>
+                <h1>Board Game Competition</h1>
+            </div>
+            <div class="header-controls">
+                <button class="btn theme-toggle" id="themeToggle" title="Toggle dark mode">☀️</button>
+            </div>
+        </header>
+
+        <aside class="filters-panel">
+            <h2>Filters</h2>
+
+            <div class="filter-group">
+                <label for="gameFilter">Game</label>
+                <input type="text" id="gameSearch" placeholder="Search games..." style="margin-bottom: 0.5rem;">
+                <select id="gameFilter" multiple></select>
+                <label style="margin-top: 0.5rem;">
+                    <input type="checkbox" id="showRetiredGames"> Show retired games
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <label>Player</label>
+                <div id="playerFilter" class="player-chips"></div>
+            </div>
+
+            <div class="filter-group" id="dateRangeGroup">
+                <label for="dateRange">Date Range</label>
+                <div class="date-inputs">
+                    <input type="date" id="dateFrom" placeholder="From">
+                    <input type="date" id="dateTo" placeholder="To" max="">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>
+                    <input type="checkbox" id="winsOnly"> Show Wins Only
+                </label>
+            </div>
+
+            <button class="btn btn-secondary" id="resetFilters">Reset Filters</button>
+        </aside>
+
+        <main class="dashboard-content">
+            <nav class="tabs-nav" aria-label="Dashboard sections">
+                <button class="tab-btn active" data-tab="arenaModule">Arena</button>
+                <button class="tab-btn" data-tab="rivalriesModule">Rivalries</button>
+                <button class="tab-btn" data-tab="metagameModule">Metagame</button>
+                <button class="tab-btn" data-tab="attributesModule">Analysis</button>
+            </nav>
+
+            <!-- Arena Module -->
+            <section class="module tab-panel active" id="arenaModule">
+                <h2>Arena: Recent Performance</h2>
+                <div class="module-header">
+                    <div id="arenaStats"></div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="arenaChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Rivalries Module -->
+            <section class="module tab-panel" id="rivalriesModule">
+                <h2>Rivalries: Head-to-Head</h2>
+                <div class="chart-container">
+                    <canvas id="rivalriesChart"></canvas>
+                </div>
+                <div class="table-container" id="rivalriesTable"></div>
+            </section>
+
+            <!-- Metagame Module -->
+            <section class="module tab-panel" id="metagameModule">
+                <h2>Metagame: Player Edges</h2>
+                <div class="metagame-local-filter" aria-label="Metagame insight filters">
+                    <span>Insight</span>
+                    <button class="metric-btn active" data-metric="win_rate">Win Rate</button>
+                    <button class="metric-btn" data-metric="wins">Wins</button>
+                    <button class="metric-btn" data-metric="lasts">Last Places</button>
+                    <button class="metric-btn" data-metric="score_max">High Score</button>
+                    <button class="metric-btn" data-metric="score_min">Low Score</button>
+                    <button class="metric-btn" data-metric="streak_win_best">Best Win Streak</button>
+                    <button class="metric-btn" data-metric="streak_loss_best">Worst Loss Streak</button>
+                </div>
+                <div class="chart-container">
+                    <canvas id="metagameChart"></canvas>
+                </div>
+                <div id="metagameStats"></div>
+            </section>
+
+            <!-- Analysis Module -->
+            <section class="module tab-panel" id="attributesModule">
+                <h2>Player Analysis</h2>
+                <div id="attributesRadars"></div>
+                <div id="attributesStats"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+    <!-- App Code -->
+    <script src="./utils.js"></script>
+    <script src="./data.js"></script>
+    <script src="./auth.js"></script>
+    <script src="./filters.js"></script>
+    <script src="./modules/player-profile.js"></script>
+    <script src="./arena.js"></script>
+    <script src="./rivalries.js"></script>
+    <script src="./attributes.js"></script>
+    <script src="./metagame.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

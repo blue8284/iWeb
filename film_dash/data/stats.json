@@ -1,0 +1,1265 @@
+{
+  "new_arrivals": {
+    "7d": [],
+    "30d": [],
+    "90d": []
+  },
+  "top_downloads": [
+    {
+      "title": "Obsession",
+      "year": 2025,
+      "total_dl": 591,
+      "imdb_id": "tt39330776"
+    },
+    {
+      "title": "Ip Man: Kung Fu Legend",
+      "year": 2026,
+      "total_dl": 515,
+      "imdb_id": "tt38682795"
+    },
+    {
+      "title": "Citizen Vigilante",
+      "year": 2026,
+      "total_dl": 360,
+      "imdb_id": "tt35309713"
+    },
+    {
+      "title": "Man of War",
+      "year": 2026,
+      "total_dl": 327,
+      "imdb_id": "tt34584846"
+    },
+    {
+      "title": "Project Hail Mary",
+      "year": 2026,
+      "total_dl": 251,
+      "imdb_id": "tt12042730"
+    },
+    {
+      "title": "Mortal Kombat II",
+      "year": 2026,
+      "total_dl": 245,
+      "imdb_id": "tt17490712"
+    },
+    {
+      "title": "Obsession",
+      "year": 2026,
+      "total_dl": 216,
+      "imdb_id": "tt37287335"
+    },
+    {
+      "title": "Deep Water",
+      "year": 2026,
+      "total_dl": 174,
+      "imdb_id": "tt29516222"
+    },
+    {
+      "title": "Backrooms",
+      "year": 2026,
+      "total_dl": 168,
+      "imdb_id": "tt26657236"
+    },
+    {
+      "title": "The Furious",
+      "year": 2026,
+      "total_dl": 144,
+      "imdb_id": "tt33311069"
+    },
+    {
+      "title": "Enola Holmes 3",
+      "year": 2026,
+      "total_dl": 133,
+      "imdb_id": "tt32278481"
+    },
+    {
+      "title": "The Devil Wears Prada 2",
+      "year": 2026,
+      "total_dl": 126,
+      "imdb_id": "tt33612209"
+    },
+    {
+      "title": "Beauty in Rope Hell",
+      "year": 1983,
+      "total_dl": 119,
+      "imdb_id": "tt0285498"
+    },
+    {
+      "title": "Disclosure Day",
+      "year": 2026,
+      "total_dl": 113,
+      "imdb_id": "tt15047880"
+    },
+    {
+      "title": "The Mortuary Assistant",
+      "year": 2026,
+      "total_dl": 109,
+      "imdb_id": "tt36647890"
+    },
+    {
+      "title": "Masters of the Universe",
+      "year": 2026,
+      "total_dl": 100,
+      "imdb_id": "tt0427340"
+    },
+    {
+      "title": "Hoppers",
+      "year": 2026,
+      "total_dl": 98,
+      "imdb_id": "tt26443616"
+    },
+    {
+      "title": "Crime 101",
+      "year": 2026,
+      "total_dl": 93,
+      "imdb_id": "tt32430579"
+    },
+    {
+      "title": "Passenger",
+      "year": 2026,
+      "total_dl": 92,
+      "imdb_id": "tt33763941"
+    },
+    {
+      "title": "Razor",
+      "year": 2026,
+      "total_dl": 91,
+      "imdb_id": "tt39286108"
+    },
+    {
+      "title": "The Get Out",
+      "year": 2026,
+      "total_dl": 91,
+      "imdb_id": "tt32321803"
+    },
+    {
+      "title": "Whistle",
+      "year": 2025,
+      "total_dl": 89,
+      "imdb_id": "tt39089340"
+    },
+    {
+      "title": "Black Diamond",
+      "year": 2025,
+      "total_dl": 87,
+      "imdb_id": "tt21065274"
+    },
+    {
+      "title": "The Outer Threat",
+      "year": 2026,
+      "total_dl": 86,
+      "imdb_id": "tt33372918"
+    },
+    {
+      "title": "Avatar: Fire and Ash",
+      "year": 2025,
+      "total_dl": 82,
+      "imdb_id": "tt1757678"
+    },
+    {
+      "title": "Detective Chen 2",
+      "year": 2026,
+      "total_dl": 81,
+      "imdb_id": "tt33397303"
+    },
+    {
+      "title": "One Battle After Another",
+      "year": 2025,
+      "total_dl": 79,
+      "imdb_id": "tt30144839"
+    },
+    {
+      "title": "Chaos",
+      "year": 2005,
+      "total_dl": 76,
+      "imdb_id": "tt0402910"
+    },
+    {
+      "title": "Saccharine",
+      "year": 2026,
+      "total_dl": 74,
+      "imdb_id": "tt35050712"
+    },
+    {
+      "title": "The Death of Robin Hood",
+      "year": 2026,
+      "total_dl": 73,
+      "imdb_id": "tt32273171"
+    },
+    {
+      "title": "Exit Protocol",
+      "year": 2025,
+      "total_dl": 72,
+      "imdb_id": "tt32421438"
+    },
+    {
+      "title": "Mercy",
+      "year": 2026,
+      "total_dl": 71,
+      "imdb_id": "tt31050594"
+    },
+    {
+      "title": "Ne Zha 2",
+      "year": 2025,
+      "total_dl": 69,
+      "imdb_id": "tt34956443"
+    },
+    {
+      "title": "Final Destination: Bloodlines",
+      "year": 2025,
+      "total_dl": 66,
+      "imdb_id": "tt9619824"
+    },
+    {
+      "title": "Scary Movie",
+      "year": 2026,
+      "total_dl": 64,
+      "imdb_id": "tt32093575"
+    },
+    {
+      "title": "Self/less",
+      "year": 2015,
+      "total_dl": 62,
+      "imdb_id": "tt2140379"
+    },
+    {
+      "title": "Husbands in Action",
+      "year": 2026,
+      "total_dl": 60,
+      "imdb_id": "tt36876775"
+    },
+    {
+      "title": "Greenland 2: Migration",
+      "year": 2026,
+      "total_dl": 58,
+      "imdb_id": "tt14850054"
+    },
+    {
+      "title": "Blast",
+      "year": 2026,
+      "total_dl": 58,
+      "imdb_id": "tt39537343"
+    },
+    {
+      "title": "Malcolm in the Middle: Life's Still Unfair",
+      "year": 2026,
+      "total_dl": 58,
+      "imdb_id": "tt35466672"
+    },
+    {
+      "title": "The Old Woman with the Knife",
+      "year": 2025,
+      "total_dl": 57,
+      "imdb_id": "tt34509472"
+    },
+    {
+      "title": "Black Box",
+      "year": 2026,
+      "total_dl": 56,
+      "imdb_id": "tt32315584"
+    },
+    {
+      "title": "Blades of the Guardians",
+      "year": 2026,
+      "total_dl": 55,
+      "imdb_id": "tt32649961"
+    },
+    {
+      "title": "Beast",
+      "year": 2026,
+      "total_dl": 54,
+      "imdb_id": "tt7708226"
+    },
+    {
+      "title": "Kill List",
+      "year": 2011,
+      "total_dl": 52,
+      "imdb_id": "tt1788391"
+    },
+    {
+      "title": "First Strike",
+      "year": 1996,
+      "total_dl": 52,
+      "imdb_id": "tt0116704"
+    },
+    {
+      "title": "Detective Conan: One-Eyed Flashback",
+      "year": 2025,
+      "total_dl": 49,
+      "imdb_id": "tt35444710"
+    },
+    {
+      "title": "Hijacked",
+      "year": 2025,
+      "total_dl": 47,
+      "imdb_id": "tt38132338"
+    },
+    {
+      "title": "Marrowbone",
+      "year": 2017,
+      "total_dl": 47,
+      "imdb_id": "tt5886440"
+    },
+    {
+      "title": "The Other Side of the Door",
+      "year": 2016,
+      "total_dl": 45,
+      "imdb_id": "tt3702652"
+    }
+  ],
+  "top_rated": [
+    {
+      "imdb_id": "tt38673135",
+      "title": "Taylor Swift: The Eras Tour - The Final Show",
+      "year": 2025,
+      "rating": 8.9,
+      "votes": 1343,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYzk0MWYzNjAtMjY1Mi00NTlhLTkyNTMtYWYxNmFhNGUwMTljXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0137523",
+      "title": "Fight Club",
+      "year": 1999,
+      "rating": 8.8,
+      "votes": 2601857,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt1853728",
+      "title": "Django Unchained",
+      "year": 2012,
+      "rating": 8.5,
+      "votes": 1878015,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt33022710",
+      "title": "Ocean with David Attenborough",
+      "year": 2025,
+      "rating": 8.5,
+      "votes": 4689,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BN2I2ZjI0YWItM2I3My00NGE3LTk5ZDgtM2M2MWY2ZjFlNmNiXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt37893389",
+      "title": "Baahubali: The Epic",
+      "year": 2025,
+      "rating": 8.5,
+      "votes": 1178,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNmIwYTI3ODItMzRkOS00MzlhLWI4NzQtNDFmOGJhZGJhM2VkXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0361748",
+      "title": "Inglourious Basterds",
+      "year": 2009,
+      "rating": 8.4,
+      "votes": 1778290,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BODZhMWJlNjYtNDExNC00MTIzLTllM2ItOGQ2NGVjNDQ3MzkzXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt12042730",
+      "title": "Project Hail Mary",
+      "year": 2026,
+      "rating": 8.3,
+      "votes": 333549,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt8503618",
+      "title": "Hamilton",
+      "year": 2020,
+      "rating": 8.3,
+      "votes": 139939,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYTc3MWIyMzAtMTZmNC00YmNjLWIyZTgtMmU4NjZkYzZkOThkXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt33014583",
+      "title": "Dhurandhar",
+      "year": 2025,
+      "rating": 8.3,
+      "votes": 138488,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMzFiNTVkZjYtM2I3Yi00MGNjLWEyYTAtMGViNGExZmMzMGMzXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0993846",
+      "title": "The Wolf of Wall Street",
+      "year": 2013,
+      "rating": 8.2,
+      "votes": 1784314,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt10272386",
+      "title": "The Father",
+      "year": 2020,
+      "rating": 8.2,
+      "votes": 240885,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYzUxMDAyMDAtNzIyZi00OGQ1LTllMjEtYzRjOThkZTUxNTliXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt10698680",
+      "title": "K.G.F: Chapter 2",
+      "year": 2022,
+      "rating": 8.2,
+      "votes": 168019,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZmQzZjVkZTUtYjI4ZC00ZDJmLWI0ZDUtZTFmMGM1Mzc5ZjIyXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt7838252",
+      "title": "K.G.F: Chapter 1",
+      "year": 2018,
+      "rating": 8.2,
+      "votes": 110193,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BM2M0YmIxNzItOWI4My00MmQzLWE0NGYtZTM3NjllNjIwZjc5XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0264464",
+      "title": "Catch Me If You Can",
+      "year": 2002,
+      "rating": 8.1,
+      "votes": 1233450,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt3315342",
+      "title": "Logan",
+      "year": 2017,
+      "rating": 8.1,
+      "votes": 917281,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BM2JjODdkMGMtNmY2YS00OGM2LThiY2YtZGYyNzE4Nzc2ODA0XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt30413898",
+      "title": "Dacoit: A Love Story",
+      "year": 2026,
+      "rating": 8.1,
+      "votes": 2765,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTA2YzhlYTUtMGJmMS00MjlmLWExMjYtOWEzOTBmMTViMWQyXkEyXkFqcGc@._V1_QL75_UY562_CR21,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0079470",
+      "title": "Monty Python's Life of Brian",
+      "year": 1979,
+      "rating": 8.0,
+      "votes": 433485,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNDMzY2E4NjEtMTJiZC00Y2UzLWFiM2MtZWVhNTg5OGQxNjk1XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt37287335",
+      "title": "Obsession",
+      "year": 2026,
+      "rating": 8.0,
+      "votes": 176988,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0156887",
+      "title": "Perfect Blue",
+      "year": 1997,
+      "rating": 8.0,
+      "votes": 119036,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMzAwNDIzMzEtZDZkNC00ZDQ4LTk3ZDMtZjVhMTU2YzgzZTZiXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt34956443",
+      "title": "Ne Zha 2",
+      "year": 2025,
+      "rating": 7.9,
+      "votes": 23207,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYjIyMDc3ZmQtZTQyYy00NDhhLTlmMWEtYzM3MDYwNjRmY2NkXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt36733027",
+      "title": "Nobody",
+      "year": 2025,
+      "rating": 7.9,
+      "votes": 1690,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZDA2OGJiZWMtNDY3Yi00ODJjLTgwM2EtOTk5ODNlODg0YjNhXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt14905854",
+      "title": "Hamnet",
+      "year": 2025,
+      "rating": 7.8,
+      "votes": 109507,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMDQ5ZmY0OWYtOTYzZi00Mzg5LWE3N2EtMjYwZTAzZmJhYjkyXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt33100314",
+      "title": "Remarkably Bright Creatures",
+      "year": 2026,
+      "rating": 7.8,
+      "votes": 11826,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNzM3OTRlZDktYTk0OS00OTlmLWFhMjctMTZiODU4N2RiYzhhXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0084390",
+      "title": "The Ballad of Narayama",
+      "year": 1983,
+      "rating": 7.8,
+      "votes": 9789,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNjc4ODczOGYtMDE3YS00ZjIxLTkzMWUtOTEwOGVkODhlN2I1XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt7362036",
+      "title": "Dying to Survive",
+      "year": 2018,
+      "rating": 7.8,
+      "votes": 9024,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZTQ4YWZiOWUtYWI4Ny00ODljLWE3N2MtMDUxOGJkNTg4ZjkwXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt30144839",
+      "title": "One Battle After Another",
+      "year": 2025,
+      "rating": 7.7,
+      "votes": 397927,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMzBkZmQ0NjMtNTZlMy00ZjdlLTg5ODUtYWFlNGM0YzE3MTg0XkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt26743210",
+      "title": "How to Train Your Dragon",
+      "year": 2025,
+      "rating": 7.7,
+      "votes": 131570,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BODA5Y2M0NjctNWQzMy00ODRhLWE0MzUtYmE1YTAzZjYyYmQyXkEyXkFqcGc@._V1_QL75_UX380_CR0,20,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0389557",
+      "title": "Black Book",
+      "year": 2006,
+      "rating": 7.7,
+      "votes": 83618,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTIzMjc2ODQ2NV5BMl5BanBnXkFtZTYwODkzNTA3._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt27714581",
+      "title": "Sentimental Value",
+      "year": 2025,
+      "rating": 7.7,
+      "votes": 75460,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTMwMTk0Y2QtY2VhNy00OGYwLThkMjMtZjkwMGI3MTJiMjAyXkEyXkFqcGc@._V1_QL75_UY562_CR2,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0260991",
+      "title": "Joint Security Area",
+      "year": 2000,
+      "rating": 7.7,
+      "votes": 37133,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTI1NDA4NTMyN15BMl5BanBnXkFtZTYwNTA2ODc5._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0144084",
+      "title": "American Psycho",
+      "year": 2000,
+      "rating": 7.6,
+      "votes": 827026,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNzBjM2I5ZjUtNmIzNy00OGNkLWIwZDMtOTAwYWUwMzA2YjdlXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0181689",
+      "title": "Minority Report",
+      "year": 2002,
+      "rating": 7.6,
+      "votes": 617708,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYTdmNzM3YzItZTRkYS00MTY5LTg4ZmItNjFmNTk2N2Q2NmNlXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt1210166",
+      "title": "Moneyball",
+      "year": 2011,
+      "rating": 7.6,
+      "votes": 504163,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjAxOTU3Mzc1M15BMl5BanBnXkFtZTcwMzk1ODUzNg@@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt10366206",
+      "title": "John Wick: Chapter 4",
+      "year": 2023,
+      "rating": 7.6,
+      "votes": 405485,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BY2Q2ZmI5ZjUtNWVhMC00YzJkLTlmYjMtY2RmZDhkNzEzYjZhXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt16311594",
+      "title": "F1: The Movie",
+      "year": 2025,
+      "rating": 7.6,
+      "votes": 353753,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNGI0MDI4NjEtOWU3ZS00ODQyLWFhYTgtNGYxM2ZkM2Q2YjE3XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt1855199",
+      "title": "End of Watch",
+      "year": 2012,
+      "rating": 7.6,
+      "votes": 283662,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjMxNjU0ODU5Ml5BMl5BanBnXkFtZTcwNjI4MzAyOA@@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt2802154",
+      "title": "Leviathan",
+      "year": 2014,
+      "rating": 7.6,
+      "votes": 59296,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjAwMTY3MTU0Ml5BMl5BanBnXkFtZTgwNzE0ODAwMzE@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt27540217",
+      "title": "Good Bad Ugly",
+      "year": 2025,
+      "rating": 7.6,
+      "votes": 6625,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZTViMDEwZjgtMjEzZS00YWQ1LWI0ODctMWIzNTE4Y2Y5Y2Y2XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt3890160",
+      "title": "Baby Driver",
+      "year": 2017,
+      "rating": 7.5,
+      "votes": 682380,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjM3MjQ1MzkxNl5BMl5BanBnXkFtZTgwODk1ODgyMjI@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt31193180",
+      "title": "Sinners",
+      "year": 2025,
+      "rating": 7.5,
+      "votes": 472042,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0120663",
+      "title": "Eyes Wide Shut",
+      "year": 1999,
+      "rating": 7.5,
+      "votes": 424194,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZTQ0MmM5MDAtYmYyZS00MzlmLTlhZTAtZDJlZWY5ZTZkZjZmXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0970179",
+      "title": "Hugo",
+      "year": 2011,
+      "rating": 7.5,
+      "votes": 348108,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjAzNzk5MzgyNF5BMl5BanBnXkFtZTcwOTE4NDU5Ng@@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt5537002",
+      "title": "Killers of the Flower Moon",
+      "year": 2023,
+      "rating": 7.5,
+      "votes": 302730,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZWY5ZDVjNTUtODI5Yy00MjFhLWEyM2EtYzZjM2VjZTI0MTBjXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt0117665",
+      "title": "Sleepers",
+      "year": 1996,
+      "rating": 7.5,
+      "votes": 249395,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjBhMWRmZTAtOGRlNC00YWYxLTlmZWUtYTY4YThlZGNhYmM2XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt11378946",
+      "title": "Michael",
+      "year": 2026,
+      "rating": 7.5,
+      "votes": 144205,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNzllNmRlN2EtMDQyOC00ODJjLTg4OWQtZDNmNGU3YzlkNjc1XkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0119167",
+      "title": "Funny Games",
+      "year": 1997,
+      "rating": 7.5,
+      "votes": 92393,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BN2NkZWQyNzgtNGIzZC00YjFkLWFkZGQtNTU0OGI5ODYxODA1XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt29540862",
+      "title": "Bhooth Bangla",
+      "year": 2026,
+      "rating": 7.5,
+      "votes": 9969,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BN2Y3NjRhYmMtNWVjMy00ZmE1LWJkNGYtNDY3Y2I3NjkzOGE0XkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+    },
+    {
+      "imdb_id": "tt0064451",
+      "title": "A Touch of Zen",
+      "year": 1971,
+      "rating": 7.5,
+      "votes": 8143,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMzExYWRlM2EtMDk3NC00NTMyLTk4MzUtNmM3ODhiNzcyYWY2XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt10365912",
+      "title": "Becoming Led Zeppelin",
+      "year": 2025,
+      "rating": 7.5,
+      "votes": 5786,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTBhMzliNzYtMjQwMy00MjdhLWIyOGYtYzdiY2FlNjk3YTkzXkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    {
+      "imdb_id": "tt26581740",
+      "title": "Weapons",
+      "year": 2025,
+      "rating": 7.4,
+      "votes": 349399,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTBhNWJjZWItYzY3NS00M2NkLThmOWYtYTlmNzBmN2UxZWFjXkEyXkFqcGc@._V1_QL75_UY562_CR35,0,380,562_.jpg"
+    }
+  ],
+  "top_actors": [
+    {
+      "name": "Christoph Waltz",
+      "imdb_id": "nm0910607",
+      "photo_url": "https://image.tmdb.org/t/p/w185/jMvLGCVXLaBqjRLf5olyvEucZob.jpg",
+      "film_count": 3,
+      "avg_rating": 8.1
+    },
+    {
+      "name": "Leonardo DiCaprio",
+      "imdb_id": "nm0000138",
+      "photo_url": "https://image.tmdb.org/t/p/w185/mkdRcVIQl4WZhDf1vXKWTD7HZrZ.jpg",
+      "film_count": 5,
+      "avg_rating": 8.0
+    },
+    {
+      "name": "Jared Leto",
+      "imdb_id": "nm0001467",
+      "photo_url": "https://image.tmdb.org/t/p/w185/ca3x0OfIKbJppZh8S1Alx3GfUZO.jpg",
+      "film_count": 3,
+      "avg_rating": 7.8
+    },
+    {
+      "name": "Brad Pitt",
+      "imdb_id": "nm0000093",
+      "photo_url": "https://image.tmdb.org/t/p/w185/m09Y1YfPPeNYYUSHnnVqahkrC1o.jpg",
+      "film_count": 6,
+      "avg_rating": 7.8
+    },
+    {
+      "name": "Jon Bernthal",
+      "imdb_id": "nm1256532",
+      "photo_url": "https://image.tmdb.org/t/p/w185/o0t6EVkJOrFAjESDilZUlf46IbQ.jpg",
+      "film_count": 3,
+      "avg_rating": 7.4
+    },
+    {
+      "name": "Jonah Hill",
+      "imdb_id": "nm1706767",
+      "photo_url": "https://image.tmdb.org/t/p/w185/cymlWttB83MsAGR2EkTgANtjeRH.jpg",
+      "film_count": 3,
+      "avg_rating": 7.4
+    },
+    {
+      "name": "Bill Skarsgård",
+      "imdb_id": "nm0803889",
+      "photo_url": "https://image.tmdb.org/t/p/w185/yGML6E9OtHQ5PFSvxoIj901tvsL.jpg",
+      "film_count": 3,
+      "avg_rating": 7.2
+    },
+    {
+      "name": "Jack O'Connell",
+      "imdb_id": "nm1925239",
+      "photo_url": "https://image.tmdb.org/t/p/w185/ihn0M2O0uYr7UCqGhjmjDQgFulB.jpg",
+      "film_count": 3,
+      "avg_rating": 7.1
+    },
+    {
+      "name": "Robert De Niro",
+      "imdb_id": "nm0000134",
+      "photo_url": "https://image.tmdb.org/t/p/w185/cT8htcckIuyI1Lqwt1CvD02ynTh.jpg",
+      "film_count": 3,
+      "avg_rating": 7.1
+    },
+    {
+      "name": "David Thewlis",
+      "imdb_id": "nm0000667",
+      "photo_url": "https://image.tmdb.org/t/p/w185/gJqz8h5AKaVvOLS0hm5Vdvel6JB.jpg",
+      "film_count": 3,
+      "avg_rating": 7.0
+    },
+    {
+      "name": "Keanu Reeves",
+      "imdb_id": "nm0000206",
+      "photo_url": "https://image.tmdb.org/t/p/w185/8RZLOyYGsoRe9p44q3xin9QkMHv.jpg",
+      "film_count": 3,
+      "avg_rating": 7.0
+    },
+    {
+      "name": "Meryl Streep",
+      "imdb_id": "nm0000658",
+      "photo_url": "https://image.tmdb.org/t/p/w185/g5cVxQBAQ3AXt3LhdBXtbbN47Uc.jpg",
+      "film_count": 3,
+      "avg_rating": 7.0
+    },
+    {
+      "name": "Helena Bonham Carter",
+      "imdb_id": "nm0000307",
+      "photo_url": "https://image.tmdb.org/t/p/w185/hJMbNSPJ2PCahsP3rNEU39C8GWU.jpg",
+      "film_count": 5,
+      "avg_rating": 6.9
+    },
+    {
+      "name": "Sigourney Weaver",
+      "imdb_id": "nm0000244",
+      "photo_url": "https://image.tmdb.org/t/p/w185/wTSnfktNBLd6kwQxgvkqYw6vEon.jpg",
+      "film_count": 3,
+      "avg_rating": 6.9
+    },
+    {
+      "name": "Stanley Tucci",
+      "imdb_id": "nm0001804",
+      "photo_url": "https://image.tmdb.org/t/p/w185/q4TanMDI5Rgsvw4SfyNbPBh4URr.jpg",
+      "film_count": 3,
+      "avg_rating": 6.9
+    },
+    {
+      "name": "Dustin Hoffman",
+      "imdb_id": "nm0000163",
+      "photo_url": "https://image.tmdb.org/t/p/w185/yxNGnTiou25c3zjppT5dW2eWAve.jpg",
+      "film_count": 4,
+      "avg_rating": 6.9
+    },
+    {
+      "name": "David Harbour",
+      "imdb_id": "nm1092086",
+      "photo_url": "https://image.tmdb.org/t/p/w185/qMFtMWlYVtFVyBoBhX5IoA5sN5a.jpg",
+      "film_count": 4,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Eiza González",
+      "imdb_id": "nm2555462",
+      "photo_url": "https://image.tmdb.org/t/p/w185/9kwfAiMeRUGR6cpZyY8FCuP5MSX.jpg",
+      "film_count": 3,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Tony Leung Ka-fai",
+      "imdb_id": "nm0504899",
+      "photo_url": "https://image.tmdb.org/t/p/w185/il4L0QSp5STfZCB1wsvb6rSCDar.jpg",
+      "film_count": 3,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Wang Xueqi",
+      "imdb_id": "nm1281653",
+      "photo_url": "https://image.tmdb.org/t/p/w185/6ZWonDufaYcVeMmv1ZD8MZZZDeM.jpg",
+      "film_count": 3,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Tom Hardy",
+      "imdb_id": "nm0362766",
+      "photo_url": "https://image.tmdb.org/t/p/w185/d81K0RH8UX7tZj49tZaQhZ9ewH.jpg",
+      "film_count": 3,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Charles Dance",
+      "imdb_id": "nm0001097",
+      "photo_url": "https://image.tmdb.org/t/p/w185/3xHwq5lchAI6mfW0aGQOEijexv6.jpg",
+      "film_count": 4,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Emily Blunt",
+      "imdb_id": "nm1289434",
+      "photo_url": "https://image.tmdb.org/t/p/w185/5nCSG5TL1bP1geD8aaBfaLnLLCD.jpg",
+      "film_count": 3,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Janet McTeer",
+      "imdb_id": "nm0005216",
+      "photo_url": "https://image.tmdb.org/t/p/w185/qOKAI6aunD4J5MXiwwomAhI3jI2.jpg",
+      "film_count": 3,
+      "avg_rating": 6.8
+    },
+    {
+      "name": "Michelle Yeoh",
+      "imdb_id": "nm0000706",
+      "photo_url": "https://image.tmdb.org/t/p/w185/i6fHvGt7Rb8oVyjjdQVV6vEHB94.jpg",
+      "film_count": 5,
+      "avg_rating": 6.7
+    },
+    {
+      "name": "Jackie Chan",
+      "imdb_id": "nm0000329",
+      "photo_url": "https://image.tmdb.org/t/p/w185/nraZoTzwJQPHspAVsKfgl3RXKKa.jpg",
+      "film_count": 5,
+      "avg_rating": 6.7
+    },
+    {
+      "name": "Anthony Ramos",
+      "imdb_id": "nm6588867",
+      "photo_url": "https://image.tmdb.org/t/p/w185/gCeRfH3aetIpZwKxe8Wl4ZYcQg5.jpg",
+      "film_count": 5,
+      "avg_rating": 6.7
+    },
+    {
+      "name": "Dave Franco",
+      "imdb_id": "nm2002649",
+      "photo_url": "https://image.tmdb.org/t/p/w185/d0I1BgNBAVvLJEDSfmyNVjYWPZE.jpg",
+      "film_count": 3,
+      "avg_rating": 6.7
+    },
+    {
+      "name": "Robert Pattinson",
+      "imdb_id": "nm1500155",
+      "photo_url": "https://image.tmdb.org/t/p/w185/3qZ09UE7lN6AtorfXFRYpEtSY93.jpg",
+      "film_count": 3,
+      "avg_rating": 6.6
+    },
+    {
+      "name": "Teresa Ha Ping",
+      "imdb_id": "nm0351719",
+      "photo_url": "https://image.tmdb.org/t/p/w185/mhAlT7Q2YFry8B8cpnxBoc8XuCu.jpg",
+      "film_count": 3,
+      "avg_rating": 6.6
+    }
+  ],
+  "top_directors": [
+    {
+      "name": "Martin Scorsese",
+      "imdb_id": null,
+      "photo_url": null,
+      "film_count": 3,
+      "avg_rating": 7.7
+    },
+    {
+      "name": "Steven Spielberg",
+      "imdb_id": null,
+      "photo_url": null,
+      "film_count": 3,
+      "avg_rating": 7.5
+    }
+  ],
+  "year_distribution": [
+    {
+      "year": 1968,
+      "count": 1
+    },
+    {
+      "year": 1971,
+      "count": 1
+    },
+    {
+      "year": 1972,
+      "count": 1
+    },
+    {
+      "year": 1974,
+      "count": 1
+    },
+    {
+      "year": 1976,
+      "count": 2
+    },
+    {
+      "year": 1977,
+      "count": 1
+    },
+    {
+      "year": 1979,
+      "count": 1
+    },
+    {
+      "year": 1980,
+      "count": 1
+    },
+    {
+      "year": 1981,
+      "count": 3
+    },
+    {
+      "year": 1982,
+      "count": 1
+    },
+    {
+      "year": 1983,
+      "count": 5
+    },
+    {
+      "year": 1984,
+      "count": 2
+    },
+    {
+      "year": 1985,
+      "count": 2
+    },
+    {
+      "year": 1986,
+      "count": 1
+    },
+    {
+      "year": 1987,
+      "count": 1
+    },
+    {
+      "year": 1988,
+      "count": 1
+    },
+    {
+      "year": 1990,
+      "count": 4
+    },
+    {
+      "year": 1992,
+      "count": 1
+    },
+    {
+      "year": 1994,
+      "count": 1
+    },
+    {
+      "year": 1995,
+      "count": 7
+    },
+    {
+      "year": 1996,
+      "count": 6
+    },
+    {
+      "year": 1997,
+      "count": 5
+    },
+    {
+      "year": 1999,
+      "count": 3
+    },
+    {
+      "year": 2000,
+      "count": 4
+    },
+    {
+      "year": 2001,
+      "count": 2
+    },
+    {
+      "year": 2002,
+      "count": 3
+    },
+    {
+      "year": 2003,
+      "count": 2
+    },
+    {
+      "year": 2004,
+      "count": 6
+    },
+    {
+      "year": 2005,
+      "count": 3
+    },
+    {
+      "year": 2006,
+      "count": 4
+    },
+    {
+      "year": 2007,
+      "count": 6
+    },
+    {
+      "year": 2008,
+      "count": 5
+    },
+    {
+      "year": 2009,
+      "count": 2
+    },
+    {
+      "year": 2010,
+      "count": 5
+    },
+    {
+      "year": 2011,
+      "count": 8
+    },
+    {
+      "year": 2012,
+      "count": 11
+    },
+    {
+      "year": 2013,
+      "count": 10
+    },
+    {
+      "year": 2014,
+      "count": 6
+    },
+    {
+      "year": 2015,
+      "count": 12
+    },
+    {
+      "year": 2016,
+      "count": 9
+    },
+    {
+      "year": 2017,
+      "count": 16
+    },
+    {
+      "year": 2018,
+      "count": 8
+    },
+    {
+      "year": 2019,
+      "count": 10
+    },
+    {
+      "year": 2020,
+      "count": 9
+    },
+    {
+      "year": 2021,
+      "count": 1
+    },
+    {
+      "year": 2022,
+      "count": 6
+    },
+    {
+      "year": 2023,
+      "count": 3
+    },
+    {
+      "year": 2024,
+      "count": 12
+    },
+    {
+      "year": 2025,
+      "count": 109
+    },
+    {
+      "year": 2026,
+      "count": 98
+    }
+  ],
+  "rating_distribution": [
+    {
+      "bucket": "0-3",
+      "count": 52
+    },
+    {
+      "bucket": "3-5",
+      "count": 45
+    },
+    {
+      "bucket": "5-7",
+      "count": 221
+    },
+    {
+      "bucket": "7-8",
+      "count": 82
+    },
+    {
+      "bucket": "8-9",
+      "count": 21
+    },
+    {
+      "bucket": "9-10",
+      "count": 1
+    }
+  ],
+  "genre_distribution": [
+    {
+      "genre": "Drama",
+      "count": 197
+    },
+    {
+      "genre": "Action",
+      "count": 177
+    },
+    {
+      "genre": "Thriller",
+      "count": 101
+    },
+    {
+      "genre": "Crime",
+      "count": 101
+    },
+    {
+      "genre": "Horror",
+      "count": 91
+    },
+    {
+      "genre": "Adventure",
+      "count": 80
+    },
+    {
+      "genre": "Comedy",
+      "count": 70
+    },
+    {
+      "genre": "Romance",
+      "count": 39
+    },
+    {
+      "genre": "Fantasy",
+      "count": 37
+    },
+    {
+      "genre": "Mystery",
+      "count": 33
+    },
+    {
+      "genre": "Sci-Fi",
+      "count": 28
+    },
+    {
+      "genre": "Animation",
+      "count": 15
+    },
+    {
+      "genre": "History",
+      "count": 14
+    },
+    {
+      "genre": "Biography",
+      "count": 12
+    },
+    {
+      "genre": "Family",
+      "count": 12
+    },
+    {
+      "genre": "Documentary",
+      "count": 11
+    },
+    {
+      "genre": "Sport",
+      "count": 7
+    },
+    {
+      "genre": "Western",
+      "count": 5
+    },
+    {
+      "genre": "Short",
+      "count": 5
+    },
+    {
+      "genre": "Music",
+      "count": 4
+    },
+    {
+      "genre": "War",
+      "count": 3
+    },
+    {
+      "genre": "Adult",
+      "count": 2
+    },
+    {
+      "genre": "Musical",
+      "count": 2
+    },
+    {
+      "genre": "News",
+      "count": 1
+    }
+  ]
+}
