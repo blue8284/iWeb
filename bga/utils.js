@@ -1,6 +1,6 @@
-// ═══════════════════════════════════════════════════
+// ============================================================
 // Theme configuration and utilities
-// ═══════════════════════════════════════════════════
+// ============================================================
 
 const theme = {
     colors: {
@@ -40,14 +40,14 @@ const theme = {
     }
 };
 
-// ── Chart Colors ──────────────────────────────────
+// -- Chart Colors -------------------------------------------------
 
 function getChartColor(index, palette = 'blues') {
     const colors = theme.chart[palette] || theme.chart.blues;
     return colors[index % colors.length];
 }
 
-// ── Gradient Helpers ──────────────────────────────
+// -- Gradient Helpers ---------------------------------------------
 
 function createLineGradient(ctx, chartArea, color, opacityTop = 0.3, opacityBottom = 0.0) {
     if (!chartArea) return hexToRgba(color, opacityTop);
@@ -81,7 +81,7 @@ function hexToRgba(color, alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-// ── Chart.js Defaults ─────────────────────────────
+// -- Chart.js Defaults --------------------------------------------
 
 function chartDefaults() {
     Chart.defaults.font.family = theme.fontFamily || "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
@@ -98,7 +98,7 @@ function chartDefaults() {
     Chart.defaults.interaction.intersect = false;
 }
 
-// ── Logo Helper ───────────────────────────────────
+// -- Logo Helper --------------------------------------------------
 
 const LOGO_PATH = 'logo.png';
 
@@ -125,11 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (LOGO_PATH) setLogo(LOGO_PATH);
 });
 
-// ═══════════════════════════════════════════════════
-// Animations — Entrance, Counter, Loading
-// ═══════════════════════════════════════════════════
+// ============================================================
+// Animations - Entrance, Counter, Loading
+// ============================================================
 
-// ── Staggered Entrance Animation ──────────────────
+// -- Staggered Entrance Animation ---------------------------------
 // Apply to child elements of a container with configurable delay increment.
 // Example: animateStaggered('#arenaStats .stat-card', 'animate-fade-in-up', 0.08);
 function animateStaggered(selector, animationClass = 'animate-fade-in-up', delayIncrement = 0.07) {
@@ -140,7 +140,7 @@ function animateStaggered(selector, animationClass = 'animate-fade-in-up', delay
     });
 }
 
-// ── Intersection Observer Entrance ────────────────
+// -- Intersection Observer Entrance -------------------------------
 // Fades in elements when they scroll into view.
 // Usage: observeEntrance('.module', 'animate-slide-up');
 function observeEntrance(selector, animationClass = 'animate-slide-up', threshold = 0.1) {
@@ -159,7 +159,7 @@ function observeEntrance(selector, animationClass = 'animate-slide-up', threshol
     document.querySelectorAll(selector).forEach(el => observer.observe(el));
 }
 
-// ── Animated Number Counter ───────────────────────
+// -- Animated Number Counter --------------------------------------
 // Counts up from 0 to target over duration.
 // Usage: animateCounter(element, 75, '%', 1200);
 function animateCounter(element, target, suffix = '', duration = 1000) {
@@ -188,7 +188,7 @@ function animateCounter(element, target, suffix = '', duration = 1000) {
     requestAnimationFrame(update);
 }
 
-// ── Loading State ─────────────────────────────────
+// -- Loading State ------------------------------------------------
 // Shows skeleton/shimmer placeholder while data loads.
 function showLoading(container) {
     if (!container) return;
@@ -196,7 +196,6 @@ function showLoading(container) {
         <div style="padding: var(--spacing-md);">
             <div class="skeleton skeleton-title"></div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
-                <div class="skeleton skeleton-card"></div>
                 <div class="skeleton skeleton-card"></div>
                 <div class="skeleton skeleton-card"></div>
                 <div class="skeleton skeleton-card"></div>
@@ -210,7 +209,7 @@ function hideLoading(container) {
     if (!container) container.innerHTML = '';
 }
 
-// ── Enhanced Stat Card Builder ────────────────────
+// -- Enhanced Stat Card Builder -----------------------------------
 // Returns a card element with accent top bar, animation class, and counter support.
 function createStatCard({
     title = '',
@@ -294,7 +293,7 @@ function createStatCard({
     return card;
 }
 
-// ── Empty State Helper ────────────────────────────
+// -- Empty State Helper -------------------------------------------
 
 function createEmptyState(icon = '📊', message = 'No data matches current filters') {
     const div = document.createElement('div');
@@ -306,7 +305,7 @@ function createEmptyState(icon = '📊', message = 'No data matches current filt
     return div;
 }
 
-// ── Formatting Helpers ────────────────────────────
+// -- Formatting Helpers -------------------------------------------
 
 function formatNumber(num) {
     if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
@@ -384,14 +383,21 @@ function countBy(array, keyFn) {
     return counts;
 }
 
+function toLocalISODate(d = new Date()) {
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
 function getTodayString() {
-    return new Date().toISOString().split('T')[0];
+    return toLocalISODate(new Date());
 }
 
 function getDateDaysAgo(days) {
     const date = new Date();
     date.setDate(date.getDate() - days);
-    return date.toISOString().split('T')[0];
+    return toLocalISODate(date);
 }
 
 function isToday(dateStr) {
@@ -406,7 +412,7 @@ function isThisWeek(dateStr) {
     return date >= startOfWeek && date <= today;
 }
 
-// ── Export ────────────────────────────────────────
+// -- Export -------------------------------------------------------
 
 window.theme = theme;
 window.themeUtils = {
@@ -427,6 +433,7 @@ window.themeUtils = {
     calculateWinRate,
     sumBy,
     countBy,
+    toLocalISODate,
     getTodayString,
     getDateDaysAgo,
     isToday,
