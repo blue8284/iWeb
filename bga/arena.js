@@ -1,6 +1,6 @@
-// ═══════════════════════════════════════════════════
-// Arena Module — Recent Performance
-// ═══════════════════════════════════════════════════
+// ============================================
+// Arena Module - Recent Performance
+// ============================================
 
 const arenaModule = {
     elements: {
@@ -126,7 +126,7 @@ const arenaModule = {
         if (!this.elements.statsContainer) return;
 
         const title = document.createElement('h3');
-        title.textContent = 'Player Performance';
+        title.textContent = '🏆 Player Performance';
         title.style.cssText = `
             font-size: var(--font-size-base);
             font-weight: var(--font-weight-semibold);
@@ -154,6 +154,10 @@ const arenaModule = {
                 badge: badge,
                 animateDelay: index * 0.07
             });
+
+            if (index === 0) {
+                card.classList.add('is-top-player');
+            }
 
             // Add first place info
             const footer = document.createElement('div');

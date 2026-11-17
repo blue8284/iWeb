@@ -23,6 +23,7 @@ const app = {
             this.modules.data = await dataModule.init();
 
             await this.initModules();
+            this.renderHeaderAvatars();
 
             this.setupFilterHandlers();
             this.setupTabs();
@@ -52,6 +53,28 @@ const app = {
                 title.style.transform = 'translateY(0)';
             });
         }
+    },
+
+    renderHeaderAvatars() {
+        const container = document.getElementById('headerAvatars');
+        if (!container || !window.dataModule) return;
+
+        container.innerHTML = '';
+        const players = dataModule.getUniquePlayers();
+        players.forEach(player => {
+            const avatar = document.createElement('button');
+            avatar.type = 'button';
+            avatar.className = 'header-avatar';
+            avatar.title = player.display_name;
+            avatar.textContent = (player.display_name || player.username || '?').charAt(0).toUpperCase();
+            avatar.style.setProperty('--avatar-color', player.fav_color || '#ffffff');
+            avatar.addEventListener('click', () => {
+                if (window.playerProfileModule) {
+                    window.playerProfileModule.open(player.username);
+                }
+            });
+            container.appendChild(avatar);
+        });
     },
 
     async initModules() {

@@ -1,6 +1,6 @@
-// ═══════════════════════════════════════════════════
-// Rivalries Module — Head-to-Head Records
-// ═══════════════════════════════════════════════════
+// ============================================
+// Rivalries Module - Head-to-Head Records
+// ============================================
 
 const rivalriesModule = {
     elements: {
@@ -235,6 +235,20 @@ const rivalriesModule = {
 
         const { rowPlayers, colPlayers, h2h } = h2hData;
 
+        // Rank players by overall H2H win rate for top-3 medals
+        const medals = ['🥇', '🥈', '🥉'];
+        const rankedUsernames = [...rowPlayers]
+            .map(p => {
+                const totals = Object.values(h2h[p.username] || {}).reduce(
+                    (acc, r) => ({ w: acc.w + r.wins, t: acc.t + r.total }),
+                    { w: 0, t: 0 }
+                );
+                return { username: p.username, rate: totals.t > 0 ? totals.w / totals.t : 0 };
+            })
+            .sort((a, b) => b.rate - a.rate)
+            .slice(0, 3)
+            .map(x => x.username);
+
         this.elements.tableContainer.innerHTML = '';
 
         const table = document.createElement('table');
@@ -270,7 +284,10 @@ const rivalriesModule = {
             const row = document.createElement('tr');
 
             const rowLabel = document.createElement('th');
-            rowLabel.textContent = player.display_name;
+            const medalIdx = rankedUsernames.indexOf(player.username);
+            rowLabel.textContent = medalIdx !== -1
+                ? `${medals[medalIdx]} ${player.display_name}`
+                : player.display_name;
             rowLabel.style.fontWeight = '500';
             rowLabel.style.color = player.fav_color;
             rowLabel.style.cursor = 'pointer';
@@ -286,12 +303,12 @@ const rivalriesModule = {
                 td.style.padding = '0.5rem';
 
                 if (player.username === opponent.username) {
-                    td.textContent = '—';
+                    td.textContent = '-';
                     td.style.color = 'var(--color-text-muted)';
                 } else {
                     const record = h2h[player.username][opponent.username];
                     if (record.total === 0) {
-                        td.innerHTML = '<span class="win-loss"><span class="sep">—</span></span>';
+                        td.innerHTML = '<span class="win-loss"><span class="sep">-</span></span>';
                         td.style.color = 'var(--color-text-muted)';
                     } else {
                         // Visual win rate bar

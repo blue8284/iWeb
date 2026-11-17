@@ -210,7 +210,16 @@ function hideLoading(container) {
 }
 
 // -- Enhanced Stat Card Builder -----------------------------------
-// Returns a card element with accent top bar, animation class, and counter support.
+// Returns a card element with accent top bar, icon badge, animation class, and counter support.
+function inferStatIcon(title = '', label = '') {
+    const text = `${title} ${label}`.toLowerCase();
+    if (text.includes('streak')) return '🔥';
+    if (text.includes('duration') || text.includes('time')) return '⏱️';
+    if (text.includes('win') && !text.includes('rate')) return '🏆';
+    if (text.includes('game') || text.includes('play')) return '🎲';
+    return '⭐';
+}
+
 function createStatCard({
     title = '',
     value = '',
@@ -219,22 +228,22 @@ function createStatCard({
     accentColor = null,
     username = null,
     badge = null,
+    icon = null,
     animateDelay = 0
 } = {}) {
     const card = document.createElement('div');
     card.className = 'stat-card';
     card.style.animationDelay = `${animateDelay}s`;
 
-    // Accent top bar
+    // Accent top bar & glow
     if (accentColor) {
         card.style.setProperty('--stat-accent', accentColor);
-        card.style.borderTop = 'none';
-        card.style.setProperty('position', 'relative');
-        card.style.setProperty('overflow', 'hidden');
-        // The ::before pseudo-element automatically uses var(--color-primary),
-        // so we use a different approach: add a colored top border
-        card.style.borderTop = `3px solid ${accentColor}`;
     }
+
+    const iconBadge = document.createElement('div');
+    iconBadge.className = 'stat-icon-badge';
+    iconBadge.textContent = icon || inferStatIcon(title, label);
+    card.appendChild(iconBadge);
 
     if (title) {
         const titleEl = document.createElement('div');
@@ -254,7 +263,7 @@ function createStatCard({
     if (value !== '') {
         const valueEl = document.createElement('div');
         valueEl.className = 'stat-value';
-        valueEl.style.color = accentColor || 'var(--color-primary)';
+        if (accentColor) valueEl.style.color = accentColor;
         valueEl.textContent = value;
         valueEl.dataset.counter = value;
         card.appendChild(valueEl);
@@ -295,11 +304,13 @@ function createStatCard({
 
 // -- Empty State Helper -------------------------------------------
 
-function createEmptyState(icon = '📊', message = 'No data matches current filters') {
+function createEmptyState(icon = '🎲', message = 'No data matches current filters') {
     const div = document.createElement('div');
     div.className = 'empty-state';
     div.innerHTML = `
-        <div class="empty-state-icon">${icon}</div>
+        <div class="empty-state-illustration">
+            <div class="empty-state-icon">${icon}</div>
+        </div>
         <div class="empty-state-text">${message}</div>
     `;
     return div;
