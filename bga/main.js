@@ -1,11 +1,10 @@
-// ═══════════════════════════════════════════════════
+// ============================================================================
 // Main application controller
-// ═══════════════════════════════════════════════════
+// ============================================================================
 
 const app = {
     modules: {
         data: null,
-        auth: null,
         filters: null,
         playerProfile: null,
         arena: null,
@@ -23,16 +22,7 @@ const app = {
         try {
             this.modules.data = await dataModule.init();
 
-            if (typeof authModule === 'undefined') {
-                console.error('authModule not loaded yet, waiting...');
-                await new Promise(resolve => setTimeout(resolve, 100));
-            }
-
-            this.modules.auth = authModule;
-            const authenticatedUser = await authModule.init();
-            console.log('✅ Authenticated as:', authenticatedUser.display_name);
-
-            await this.initModules(authenticatedUser);
+            await this.initModules();
 
             this.setupFilterHandlers();
             this.setupTabs();
@@ -64,12 +54,8 @@ const app = {
         }
     },
 
-    async initModules(authenticatedUser) {
+    async initModules() {
         this.modules.filters = await filtersModule.init();
-
-        if (authenticatedUser) {
-            filtersModule.setInitialPlayerFilter(authenticatedUser.username);
-        }
 
         if (window.playerProfileModule) {
             this.modules.playerProfile = await playerProfileModule.init();
@@ -182,31 +168,18 @@ const app = {
         });
 
         // Animate tables
-        const tables = document.querySelectorAll('.table-container');
-        tables.forEach((el, i) => {
+        document.querySelectorAll('.table-container').forEach(el => {
             el.classList.add('animate-fade-in-up');
-            el.style.animationDelay = `${i * 0.1 + 0.15}s`;
         });
     },
 
     showError(message) {
-        const dashboardContent = document.querySelector('.dashboard-content');
-        if (dashboardContent) {
-            dashboardContent.innerHTML = `
-                <div style="
-                    text-align: center;
-                    padding: ${theme.spacing.xl};
-                    background: var(--color-danger-light);
-                    color: var(--color-danger);
-                    border: 1px solid var(--color-danger);
-                    border-radius: var(--radius-lg);
-                    margin-top: var(--spacing-xl);
-                ">
-                    <div style="font-size: 2rem; margin-bottom: var(--spacing-md);">⚠️</div>
-                    <h2 style="margin-bottom: var(--spacing-sm); font-weight: var(--font-weight-semibold);">Error</h2>
-                    <p>${message}</p>
-                </div>
-            `;
+        const content = document.querySelector('.dashboard-content');
+        if (content) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;
+            content.prepend(errorDiv);
         }
     }
 };
