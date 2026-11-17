@@ -6,8 +6,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+    background: var(--color-overlay);
+    backdrop-filter: blur(6px);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -16,8 +16,9 @@
 }
 
 .profile-modal {
-    background: var(--color-background);
-    border-radius: var(--radius-lg);
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
     max-width: 700px;
     width: 100%;
@@ -45,19 +46,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--color-neutral);
+    background: var(--color-background);
 }
 
 .profile-header h2 {
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: -0.02em;
     margin: 0;
+    color: var(--color-text);
 }
 
 .profile-close-btn {
     background: none;
-    border: none;
-    font-size: 2rem;
+    border: 1px solid transparent;
+    font-size: 1.75rem;
     line-height: 1;
     color: var(--color-text-light);
     cursor: pointer;
@@ -72,7 +75,8 @@
 }
 
 .profile-close-btn:hover {
-    background: var(--color-border);
+    background: var(--color-chip-hover);
+    border-color: var(--color-border);
     color: var(--color-text);
 }
 
@@ -83,18 +87,24 @@
 }
 
 .profile-section {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
     padding: var(--spacing-lg);
-    background: var(--color-neutral);
-    border-radius: var(--radius-md);
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
 }
 
+.profile-section:last-child {
+    margin-bottom: 0;
+}
+
 .profile-section h3 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     margin-bottom: var(--spacing-md);
-    color: var(--color-text);
+    color: var(--color-text-light);
 }
 
 /* Player identity section */
@@ -106,6 +116,7 @@
 .profile-display-name {
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
+    letter-spacing: -0.02em;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -117,9 +128,9 @@
 }
 
 .profile-username {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-family: monospace;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
 }
 
 /* Stats grid */
@@ -130,23 +141,27 @@
 }
 
 .profile-stat-card {
-    background: var(--color-background);
+    background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     text-align: center;
+    box-shadow: var(--shadow-sm);
 }
 
 .profile-stat-card .stat-label {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-xs);
-    text-transform: none;
-    letter-spacing: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .profile-stat-card .stat-value {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-xs);
@@ -166,7 +181,7 @@
 }
 
 .profile-game-item {
-    background: var(--color-background);
+    background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
@@ -187,6 +202,7 @@
 .game-stat {
     font-size: var(--font-size-sm);
     color: var(--color-text-light);
+    font-variant-numeric: tabular-nums;
 }
 
 .game-stat strong {
@@ -201,13 +217,13 @@
 }
 
 .player-name-link:hover {
-    opacity: 0.7;
+    opacity: 0.75;
     text-decoration: underline;
 }
 
 /* Rival card */
 .profile-rival-card {
-    background: var(--color-background);
+    background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
@@ -223,6 +239,7 @@
 .rival-stats {
     font-size: var(--font-size-sm);
     color: var(--color-text-light);
+    font-variant-numeric: tabular-nums;
 }
 
 /* Head-to-head list */
@@ -233,7 +250,7 @@
 }
 
 .profile-h2h-item {
-    background: var(--color-background);
+    background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
@@ -263,9 +280,11 @@
     flex-direction: column;
     align-items: flex-end;
     gap: var(--spacing-xs);
+    font-variant-numeric: tabular-nums;
 }
 
 .h2h-score {
+    font-family: var(--font-mono);
     font-weight: var(--font-weight-semibold);
     color: var(--color-text);
 }
@@ -277,22 +296,39 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .profile-overlay {
+        padding: var(--spacing-sm);
+    }
+
     .profile-modal {
         max-width: 100%;
-        max-height: 100vh;
-        border-radius: 0;
+        max-height: calc(100vh - 1rem);
+        border-radius: var(--radius-lg);
     }
-    
+
+    .profile-header {
+        padding: var(--spacing-md);
+    }
+
+    .profile-content {
+        padding: var(--spacing-md);
+    }
+
+    .profile-section {
+        padding: var(--spacing-md);
+    }
+
     .profile-stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
     }
-    
+
     .profile-h2h-item {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-sm);
     }
-    
+
     .h2h-record {
         align-items: flex-start;
     }
