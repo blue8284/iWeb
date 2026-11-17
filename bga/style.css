@@ -1,9 +1,8 @@
-/* ═══════════════════════════════════════════════════
-   Board Game Competition Dashboard — Design System
-   Inspired by Linear.app × Vercel aesthetic
-   ═══════════════════════════════════════════════════ */
+/* ============================================
+   Board Game Competition Dashboard – Design System
+   ============================================ */
 
-/* ── Animation Keyframes ─────────────────────────── */
+/* — Animation Keyframes ———————————————————— */
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -51,7 +50,7 @@
     100% { transform: scale(1); }
 }
 
-/* ── Animation Utility Classes ───────────────────── */
+/* — Animation Utility Classes ————————————— */
 
 .animate-fade-in    { animation: fadeIn 0.4s ease-out both; }
 .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
@@ -70,7 +69,7 @@
 .animate-delay-9 { animation-delay: 0.45s; }
 .animate-delay-10{ animation-delay: 0.50s; }
 
-/* ── Shimmer / Skeleton Loading ──────────────────── */
+/* — Shimmer / Skeleton Loading —————————————— */
 
 .skeleton {
     background: linear-gradient(
@@ -101,14 +100,14 @@
     border-radius: var(--radius-md);
 }
 
-/* ── Theme: Light (default) ──────────────────────── */
+/* — Theme: Light (default) —————————————————— */
 
 :root {
-    --color-primary: #2563eb;
-    --color-primary-hover: #1d4ed8;
-    --color-primary-light: rgba(37, 99, 235, 0.10);
-    --color-primary-glow: rgba(37, 99, 235, 0.25);
-    --color-primary-subtle: rgba(37, 99, 235, 0.06);
+    --color-primary: #0284c7;
+    --color-primary-hover: #0369a1;
+    --color-primary-light: rgba(2, 132, 199, 0.10);
+    --color-primary-glow: rgba(2, 132, 199, 0.22);
+    --color-primary-subtle: rgba(2, 132, 199, 0.06);
     --color-secondary: #64748b;
     --color-success: #16a34a;
     --color-success-light: rgba(22, 163, 74, 0.10);
@@ -116,16 +115,16 @@
     --color-warning-light: rgba(234, 88, 12, 0.10);
     --color-danger: #dc2626;
     --color-danger-light: rgba(220, 38, 38, 0.10);
-    --color-neutral: #f8fafc;
-    --color-text: #1e293b;
-    --color-text-light: #64748b;
-    --color-text-muted: #94a3b8;
-    --color-border: #e2e8f0;
-    --color-border-light: rgba(0, 0, 0, 0.06);
-    --color-background: #ffffff;
+    --color-neutral: #f1f5f9;
+    --color-text: #0f172a;
+    --color-text-light: #475569;
+    --color-text-muted: #64748b;
+    --color-border: #cbd5e1;
+    --color-border-light: rgba(15, 23, 42, 0.06);
+    --color-background: #f8fafc;
     --color-card: #ffffff;
-    --color-overlay: rgba(0, 0, 0, 0.5);
-    --color-chip-hover: rgba(0, 0, 0, 0.04);
+    --color-overlay: rgba(15, 23, 42, 0.55);
+    --color-chip-hover: rgba(15, 23, 42, 0.04);
 
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -139,18 +138,18 @@
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
 
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 10px -2px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.10);
 
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
+    --font-size-base: 0.9375rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
+    --font-size-2xl: 1.625rem;
 
     --font-weight-normal: 400;
     --font-weight-medium: 500;
@@ -158,39 +157,38 @@
     --font-weight-bold: 700;
 }
 
-/* ── Theme: Dark ─────────────────────────────────── */
+/* — Theme: Dark ———————————————————————————— */
 
 [data-theme="dark"] {
-    --color-primary: #60a5fa;
-    --color-primary-hover: #93c5fd;
-    --color-primary-light: rgba(96, 165, 250, 0.12);
-    --color-primary-glow: rgba(96, 165, 250, 0.30);
-    --color-primary-subtle: rgba(96, 165, 250, 0.06);
+    --color-primary: #38bdf8;
+    --color-primary-hover: #7dd3fc;
+    --color-primary-light: rgba(56, 189, 248, 0.14);
+    --color-primary-glow: rgba(56, 189, 248, 0.28);
+    --color-primary-subtle: rgba(56, 189, 248, 0.07);
     --color-secondary: #94a3b8;
     --color-success: #4ade80;
-    --color-success-light: rgba(74, 222, 128, 0.10);
+    --color-success-light: rgba(74, 222, 128, 0.12);
     --color-warning: #fb923c;
-    --color-warning-light: rgba(251, 146, 60, 0.10);
+    --color-warning-light: rgba(251, 146, 60, 0.12);
     --color-danger: #f87171;
-    --color-danger-light: rgba(248, 113, 113, 0.10);
-    --color-neutral: #0c0e12;
-    --color-text: #f1f5f9;
+    --color-danger-light: rgba(248, 113, 113, 0.12);
+    --color-neutral: #090d16;
+    --color-text: #f8fafc;
     --color-text-light: #94a3b8;
     --color-text-muted: #64748b;
-    --color-border: #1e293b;
-    --color-border-light: rgba(255, 255, 255, 0.05);
-    --color-background: #0f172a;
-    --color-card: #131a2b;
-    --color-overlay: rgba(0, 0, 0, 0.7);
+    --color-border: #243047;
+    --color-border-light: rgba(255, 255, 255, 0.06);
+    --color-background: #172033;
+    --color-card: #111827;
+    --color-overlay: rgba(2, 6, 23, 0.75);
     --color-chip-hover: rgba(255, 255, 255, 0.06);
 
-    /* Shadows are lighter in dark mode (white-ambient instead of black) */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.03);
-    --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.04);
+    --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-/* ── Reset & Base ────────────────────────────────── */
+/* — Reset & Base ———————————————————————————— */
 
 * {
     box-sizing: border-box;
@@ -199,7 +197,7 @@
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -210,25 +208,25 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'cv01', 'ss03'; /* Inter geometric alternates */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-feature-settings: 'cv01', 'ss03';
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* ── Dashboard Layout ────────────────────────────── */
+/* — Dashboard Layout ———————————————————————— */
 
 .dashboard {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 280px 1fr;
     grid-template-rows: auto 1fr;
-    height: 100vh;
+    min-height: 100vh;
     gap: 0;
 }
 
-/* ── Header ──────────────────────────────────────── */
+/* — Header ————————————————————————————————— */
 
 .dashboard-header {
     grid-column: 1 / -1;
-    padding: var(--spacing-sm) var(--spacing-xl);
+    padding: 0.75rem var(--spacing-xl);
     background: var(--color-card);
     border-bottom: 1px solid var(--color-border);
     display: flex;
@@ -257,7 +255,7 @@ body {
     background-clip: text;
 }
 
-/* ── Logo slot ───────────────────────────────────── */
+/* — Logo slot —————————————————————————————— */
 
 .logo-slot {
     position: relative;
@@ -281,12 +279,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .logo-placeholder svg {
     width: 28px;
     height: 28px;
 }
 
-/* ── Player view indicator ───────────────────────── */
+/* — Player view indicator —————————————————— */
 
 .player-view-indicator {
     margin-top: var(--spacing-xs);
@@ -305,7 +304,7 @@ body {
     align-items: center;
 }
 
-/* ── Filters Panel ───────────────────────────────── */
+/* — Filters Panel —————————————————————————— */
 
 .filters-panel {
     padding: var(--spacing-lg);
@@ -316,9 +315,9 @@ body {
 }
 
 .filters-panel h2 {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-lg);
@@ -426,7 +425,7 @@ body {
     gap: var(--spacing-sm);
 }
 
-/* ── Player Chips ────────────────────────────────── */
+/* — Player Chips ——————————————————————————— */
 
 .player-chips {
     display: flex;
@@ -438,10 +437,10 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 5px 14px 5px 8px;
-    border: 1.5px solid var(--color-border);
+    padding: 5px 12px 5px 8px;
+    border: 1px solid var(--color-border);
     border-radius: 999px;
-    background: transparent;
+    background: var(--color-background);
     color: var(--color-text);
     font-size: var(--font-size-sm);
     font-family: var(--font-family);
@@ -483,11 +482,11 @@ body {
 }
 
 .player-chip.active .chip-dot {
-    transform: scale(1.3);
+    transform: scale(1.25);
     box-shadow: 0 0 0 3px var(--color-primary-glow);
 }
 
-/* ── Content Area ────────────────────────────────── */
+/* — Content Area ——————————————————————————— */
 
 .dashboard-content {
     padding: var(--spacing-xl);
@@ -495,7 +494,7 @@ body {
     background: var(--color-neutral);
 }
 
-/* ── Tabs — file-folder rounded rectangles ───────── */
+/* — Tabs —————————————————————————————————— */
 
 .tabs-nav {
     display: flex;
@@ -504,12 +503,18 @@ body {
     padding: 0;
     background: transparent;
     border: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.tabs-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .tab-btn {
     flex: 0 1 auto;
-    padding: var(--spacing-sm) var(--spacing-xl);
-    border: 1.5px solid var(--color-border);
+    padding: 0.625rem var(--spacing-lg);
+    border: 1px solid var(--color-border);
     border-bottom: none;
     border-radius: var(--radius-md) var(--radius-md) 0 0;
     background: transparent;
@@ -522,14 +527,14 @@ body {
     letter-spacing: 0.01em;
     margin-bottom: 0;
     position: relative;
-    top: 1.5px;
+    top: 1px;
     user-select: none;
+    white-space: nowrap;
 }
 
 .tab-btn:hover {
     color: var(--color-text);
     background: var(--color-primary-subtle);
-    border-color: var(--color-border);
 }
 
 .tab-btn:active {
@@ -538,17 +543,18 @@ body {
 
 .tab-btn.active {
     color: var(--color-primary);
-    border-color: var(--color-primary);
+    border-color: var(--color-border);
+    border-top: 2px solid var(--color-primary);
     background: var(--color-card);
     font-weight: var(--font-weight-semibold);
     z-index: 1;
 }
 
-/* ── Panel — connects to the active tab above ───── */
+/* — Panel — connects to the active tab above ———— */
 
 .module.tab-panel {
     display: none;
-    border: 1.5px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
     margin-top: 0;
     transition: border-color 0.3s ease;
@@ -557,10 +563,10 @@ body {
 
 .module.tab-panel.active {
     display: block;
-    border-color: var(--color-primary);
+    border-color: var(--color-border);
 }
 
-/* ── Modules ─────────────────────────────────────── */
+/* — Modules ———————————————————————————————— */
 
 .module {
     background: var(--color-card);
@@ -575,7 +581,7 @@ body {
 .module h2 {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     margin-bottom: var(--spacing-lg);
     color: var(--color-text);
 }
@@ -584,23 +590,22 @@ body {
     margin-bottom: var(--spacing-lg);
 }
 
-/* ── Chart Containers ────────────────────────────── */
+/* — Chart Containers ——————————————————————— */
 
 .chart-container {
     position: relative;
-    height: 480px;
+    height: 460px;
     margin-bottom: var(--spacing-lg);
     padding: var(--spacing-lg);
     background: var(--color-background);
-    border: 1px solid var(--color-border-light);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .chart-container:hover {
     box-shadow: var(--shadow-md);
-    border-color: var(--color-border);
 }
 
 .chart-container canvas {
@@ -608,7 +613,7 @@ body {
     height: 100% !important;
 }
 
-/* ── Tables ──────────────────────────────────────── */
+/* — Tables ————————————————————————————————— */
 
 .table-container {
     overflow-x: auto;
@@ -626,15 +631,16 @@ body {
 
 .table-container th,
 .table-container td {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.625rem 0.875rem;
     text-align: left;
     border-bottom: 1px solid var(--color-border-light);
+    font-variant-numeric: tabular-nums;
 }
 
 .table-container th {
-    background: var(--color-neutral);
+    background: var(--color-card);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-size: var(--font-size-xs);
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -645,6 +651,10 @@ body {
     transition: background-color 0.15s ease;
 }
 
+.table-container tbody tr:nth-child(even) {
+    background: var(--color-border-light);
+}
+
 .table-container tbody tr:last-child td {
     border-bottom: none;
 }
@@ -653,7 +663,7 @@ body {
     background: var(--color-chip-hover);
 }
 
-/* ── Game Stats Table (Attributes tab) ─────────── */
+/* — Game Stats Table (Attributes tab) —————— */
 
 .game-stats-table {
     width: 100%;
@@ -667,14 +677,15 @@ body {
 
 .game-stats-table th,
 .game-stats-table td {
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.625rem 0.875rem;
     border-bottom: 1px solid var(--color-border-light);
+    font-variant-numeric: tabular-nums;
 }
 
 .game-stats-table th {
-    background: var(--color-neutral);
+    background: var(--color-card);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-size: var(--font-size-xs);
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -686,6 +697,10 @@ body {
     text-align: left;
 }
 
+.game-stats-table tbody tr:nth-child(even) {
+    background: var(--color-border-light);
+}
+
 .game-stats-table tbody tr:last-child td {
     border-bottom: none;
 }
@@ -694,13 +709,13 @@ body {
     background: var(--color-chip-hover);
 }
 
-/* ── Attributes Radar Grid ─────────────────────── */
+/* — Attributes Radar Grid ————————————————— */
 
 .attr-radar-cell {
     animation: fadeInUp 0.5s ease-out both;
 }
 
-/* ── Stats Grid ──────────────────────────────────── */
+/* — Stats Grid ————————————————————————————— */
 
 .stats-grid {
     display: grid;
@@ -715,7 +730,8 @@ body {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     animation: fadeInUp 0.4s ease-out both;
     position: relative;
     overflow: hidden;
@@ -723,7 +739,7 @@ body {
 
 .stat-card:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--color-primary);
 }
 
@@ -735,8 +751,8 @@ body {
     right: 0;
     height: 3px;
     background: var(--color-primary);
-    opacity: 0.5;
-    transition: opacity 0.25s ease;
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
 }
 
 .stat-card:hover::before {
@@ -746,13 +762,16 @@ body {
 .stat-label {
     font-size: var(--font-size-xs);
     color: var(--color-text-muted);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-xs);
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 
 .stat-value {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
@@ -772,7 +791,7 @@ body {
     margin-top: var(--spacing-xs);
 }
 
-/* ── Buttons ─────────────────────────────────────── */
+/* — Buttons ———————————————————————————————— */
 
 .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -805,11 +824,11 @@ body {
 }
 
 .theme-toggle {
-    background: transparent;
+    background: var(--color-background);
     color: var(--color-text);
-    border: 1px solid var(--color-border-light);
+    border: 1px solid var(--color-border);
     font-size: var(--font-size-lg);
-    padding: var(--spacing-sm) var(--spacing-sm);
+    padding: var(--spacing-sm);
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all 0.2s ease;
@@ -822,23 +841,25 @@ body {
 }
 
 .theme-toggle:hover {
-    border-color: var(--color-border);
+    border-color: var(--color-primary);
     background: var(--color-chip-hover);
 }
 
 .btn-secondary {
-    background: var(--color-border);
+    background: var(--color-background);
     color: var(--color-text);
+    border: 1px solid var(--color-border);
     width: 100%;
     font-weight: var(--font-weight-medium);
 }
 
 .btn-secondary:hover {
-    background: var(--color-text-muted);
-    color: var(--color-background);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-subtle);
 }
 
-/* ── Metagame Local Filter ───────────────────────── */
+/* — Metagame Local Filter ————————————————— */
 
 .metagame-local-filter {
     display: flex;
@@ -846,15 +867,11 @@ body {
     flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
     background: var(--color-background);
-    border: 1px solid var(--color-border-light);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     transition: border-color 0.2s ease;
-}
-
-.metagame-local-filter:hover {
-    border-color: var(--color-border);
 }
 
 .metagame-local-filter span {
@@ -864,14 +881,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-right: var(--spacing-xs);
+    flex-shrink: 0;
 }
 
 .metric-btn {
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-xs) 0.75rem;
     border: 1px solid var(--color-border);
     border-radius: 999px;
-    background: transparent;
-    color: var(--color-text-muted);
+    background: var(--color-card);
+    color: var(--color-text-light);
     font-family: var(--font-family);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-medium);
@@ -879,6 +897,7 @@ body {
     transition: all 0.2s ease;
     user-select: none;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .metric-btn:hover {
@@ -894,11 +913,15 @@ body {
 .metric-btn.active {
     border-color: var(--color-primary);
     background: var(--color-primary);
-    color: white;
+    color: #090d16;
     font-weight: var(--font-weight-semibold);
 }
 
-/* ── Empty / No Data State ───────────────────────── */
+:root:not([data-theme="dark"]) .metric-btn.active {
+    color: #ffffff;
+}
+
+/* — Empty / No Data State ————————————————— */
 
 .empty-state {
     display: flex;
@@ -922,9 +945,10 @@ body {
     line-height: 1.6;
 }
 
-/* ── Win-Loss Indicator ──────────────────────────── */
+/* — Win-Loss Indicator ———————————————————— */
 
 .win-loss {
+    font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
     font-weight: var(--font-weight-semibold);
 }
@@ -942,7 +966,7 @@ body {
     margin: 0 2px;
 }
 
-/* ── Player Name Link ────────────────────────────── */
+/* — Player Name Link —————————————————————— */
 
 .player-name-link {
     cursor: pointer;
@@ -955,7 +979,7 @@ body {
     text-underline-offset: 2px;
 }
 
-/* ── Scrollbar Styling ───────────────────────────── */
+/* — Scrollbar Styling ————————————————————— */
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -976,7 +1000,7 @@ body {
     background: var(--color-text-muted);
 }
 
-/* ── Focus Visible ───────────────────────────────── */
+/* — Focus Visible ————————————————————————— */
 
 :focus-visible {
     outline: 2px solid var(--color-primary);
@@ -984,11 +1008,20 @@ body {
     border-radius: var(--radius-sm);
 }
 
-/* ── Responsive ──────────────────────────────────── */
+/* — Responsive ————————————————————————————— */
 
 @media (max-width: 768px) {
     .dashboard {
         grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .dashboard-header {
+        padding: 0.75rem var(--spacing-md);
+    }
+
+    .dashboard-content {
+        padding: var(--spacing-md);
     }
 
     .tabs-nav {
@@ -999,24 +1032,26 @@ body {
     }
 
     .tab-btn {
-        flex: 1;
+        flex: 0 0 auto;
         padding: var(--spacing-sm) var(--spacing-md);
         text-align: center;
         white-space: nowrap;
     }
 
     .metagame-local-filter {
-        align-items: stretch;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
 
-    .metric-btn {
-        width: 100%;
-        justify-content: center;
+    .metagame-local-filter::-webkit-scrollbar {
+        display: none;
     }
 
     .player-chips {
-        gap: 4px;
+        gap: 6px;
     }
 
     .dashboard-header h1 {
@@ -1025,6 +1060,8 @@ body {
 
     .filters-panel {
         padding: var(--spacing-md);
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
     }
 
     .stats-grid {
@@ -1035,6 +1072,15 @@ body {
 @media (max-width: 480px) {
     .stats-grid {
         grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .stat-card {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .stat-value {
+        font-size: var(--font-size-xl);
     }
 
     .module {
@@ -1042,7 +1088,12 @@ body {
     }
 
     .chart-container {
-        height: 340px;
-        padding: var(--spacing-md);
+        height: 300px;
+        padding: var(--spacing-sm);
+    }
+
+    .tab-btn {
+        padding: var(--spacing-sm) 0.75rem;
+        font-size: var(--font-size-xs);
     }
 }
