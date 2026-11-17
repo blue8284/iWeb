@@ -224,37 +224,17 @@ const filtersModule = {
             .map(chip => chip.dataset.username);
     },
 
-    // Set initial player filter (called by main.js after auth)
-    setInitialPlayerFilter(username) {
-        if (this.elements.playerFilter) {
-            const chips = Array.from(this.elements.playerFilter.querySelectorAll('.player-chip'));
-            chips.forEach(chip => {
-                chip.classList.toggle('active', chip.dataset.username === username);
-            });
-            this.state.players = [username];
-        }
-    },
-
     // -- /Player Chips ------------------------------------------------
 
-    // Reset all filters to default state (authenticated user as default player)
+    // Reset all filters to default state (all players selected + MTD dates)
     reset() {
         if (this.elements.gameFilter) {
             this.elements.gameFilter.value = '';
             this.state.games = [];
         }
 
-        // Reset player chips to authenticated user
-        if (this.elements.playerFilter && window.authModule) {
-            const authenticatedUser = window.authModule.getCurrentUser();
-            const chips = Array.from(this.elements.playerFilter.querySelectorAll('.player-chip'));
-            chips.forEach(chip => {
-                chip.classList.toggle('active', !!(
-                    authenticatedUser && chip.dataset.username === authenticatedUser.username
-                ));
-            });
-            this.state.players = authenticatedUser ? [authenticatedUser.username] : [];
-        } else if (this.elements.playerFilter) {
+        // Reset player chips to all players (no active chips = all players)
+        if (this.elements.playerFilter) {
             const chips = Array.from(this.elements.playerFilter.querySelectorAll('.player-chip'));
             chips.forEach(chip => chip.classList.remove('active'));
             this.state.players = [];
