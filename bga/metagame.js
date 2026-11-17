@@ -1,6 +1,6 @@
-// ═══════════════════════════════════════════════════
-// Metagame Module — Trends, Patterns, Player Edges
-// ═══════════════════════════════════════════════════
+// ============================================================================
+// Metagame Module - Trends, Patterns, Player Edges
+// ============================================================================
 
 const metagameModule = {
     elements: {
@@ -35,7 +35,7 @@ const metagameModule = {
 
     async render() {
         const filters = filtersModule.getFilters();
-        // Ignore date range — show all-time data
+        // Ignore date range - show all-time data
         const allTimeFilters = { ...filters, dateFrom: '', dateTo: '' };
         const data = dataModule.getFilteredData(allTimeFilters);
 
@@ -57,7 +57,7 @@ const metagameModule = {
         });
     },
 
-    // ── Sub-Handle Metric Chart ────────────────────
+    // -- Sub-Handle Metric Chart ------------------------------
 
     renderSubHandleInsight(filters) {
         if (!this.elements.chartCanvas) return;
@@ -159,7 +159,7 @@ const metagameModule = {
         });
     },
 
-    // ── Insight Cards ──────────────────────────────
+    // -- Insight Cards ----------------------------------------
 
     renderInsightCards(filters) {
         if (!this.elements.statsContainer) return;
@@ -175,8 +175,8 @@ const metagameModule = {
         const sorted = [...rows].sort((a, b) => metricConfig.parse(b[metric]) - metricConfig.parse(a[metric]));
         const top = sorted[0];
 
-        const authenticatedUser = window.authModule ? window.authModule.getCurrentUser() : null;
-        const currentUserRows = authenticatedUser ? rows.filter(row => row.username === authenticatedUser.username) : [];
+        const selectedUsername = filters.players.length === 1 ? filters.players[0] : null;
+        const currentUserRows = selectedUsername ? rows.filter(row => row.username === selectedUsername) : [];
         const bestForYou = currentUserRows.sort((a, b) => metricConfig.parse(b[metric]) - metricConfig.parse(a[metric]))[0];
 
         const mostWins = [...rows].sort((a, b) => this.parseNumber(b.wins) - this.parseNumber(a.wins))[0];
@@ -229,7 +229,18 @@ const metagameModule = {
         this.elements.statsContainer.appendChild(grid);
     },
 
-    // ── Helpers ────────────────────────────────────
+    // -- Helpers ----------------------------------------------
+
+    getSelectedPlayerColor() {
+        const selectedPlayers = (typeof filtersModule !== 'undefined' && filtersModule.state && Array.isArray(filtersModule.state.players))
+            ? filtersModule.state.players
+            : [];
+        if (selectedPlayers.length === 1) {
+            const player = dataModule.getUniquePlayers().find(p => p.username === selectedPlayers[0]);
+            if (player && player.fav_color) return player.fav_color;
+        }
+        return theme.colors.primary;
+    },
 
     getActiveGameNames() {
         return dataModule.getGamesWithActivity()
@@ -256,19 +267,19 @@ const metagameModule = {
 
     getMetricConfig(metric) {
         const configs = {
-            win_rate:        { label: 'Win Rate',        parse: v => this.parsePercent(v), format: v => `${v.toFixed(1)}%` },
-            wins:            { label: 'Wins',            parse: v => this.parseNumber(v), format: v => String(v) },
-            lasts:           { label: 'Last Places',      parse: v => this.parseNumber(v), format: v => String(v) },
-            score_max:       { label: 'High Score',      parse: v => this.parseNumber(v), format: v => String(v) },
-            score_min:       { label: 'Low Score',       parse: v => this.parseNumber(v), format: v => String(v) },
-            streak_win_best: { label: 'Best Win Streak', parse: v => this.parseNumber(v), format: v => String(v) },
-            streak_loss_best:{ label: 'Worst Loss Streak',parse: v => this.parseNumber(v), format: v => String(v) }
+            win_rate:        { label: 'Win Rate',          parse: v => this.parsePercent(v), format: v => `${v.toFixed(1)}%` },
+            wins:            { label: 'Wins',              parse: v => this.parseNumber(v),  format: v => String(v) },
+            lasts:           { label: 'Last Places',       parse: v => this.parseNumber(v),  format: v => String(v) },
+            score_max:       { label: 'High Score',        parse: v => this.parseNumber(v),  format: v => String(v) },
+            score_min:       { label: 'Low Score',         parse: v => this.parseNumber(v),  format: v => String(v) },
+            streak_win_best: { label: 'Best Win Streak',   parse: v => this.parseNumber(v),  format: v => String(v) },
+            streak_loss_best:{ label: 'Worst Loss Streak',parse: v => this.parseNumber(v),  format: v => String(v) }
         };
         return configs[metric] || configs.win_rate;
     },
 
     formatMetric(config, value) {
-        if (value === null || value === undefined || Number.isNaN(value)) return '—';
+        if (value === null || value === undefined || Number.isNaN(value)) return '-';
         return config.format(value);
     },
 
@@ -280,7 +291,7 @@ const metagameModule = {
         return Number.parseFloat(String(value).replace('%', '')) || 0;
     },
 
-    // ── Treemap (Game Popularity) ──────────────────
+    // -- Treemap (Game Popularity) ----------------------------
 
     renderTreemap(data, filters) {
         if (!this.elements.statsContainer) return;
@@ -298,8 +309,7 @@ const metagameModule = {
 
         const totalPlays = games.reduce((sum, g) => sum + g.count, 0);
 
-        const authenticatedUser = window.authModule ? window.authModule.getCurrentUser() : null;
-        const boxColor = authenticatedUser ? authenticatedUser.fav_color : theme.colors.primary;
+        const boxColor = this.getSelectedPlayerColor();
 
         const container = document.createElement('div');
         container.style.marginBottom = theme.spacing.lg;
@@ -376,7 +386,7 @@ const metagameModule = {
         this.elements.statsContainer.appendChild(container);
     },
 
-    // ── Frequency Chart (Games per Week) ───────────
+    // -- Frequency Chart (Games per Week) ---------------------
 
     renderFrequencyChart(data) {
         if (!this.elements.chartCanvas) return;
@@ -403,8 +413,7 @@ const metagameModule = {
 
         if (this.elements.chart) this.elements.chart.destroy();
 
-        const authenticatedUser = window.authModule ? window.authModule.getCurrentUser() : null;
-        const chartColor = authenticatedUser ? authenticatedUser.fav_color : theme.colors.primary;
+        const chartColor = this.getSelectedPlayerColor();
 
         this.elements.chart = new Chart(this.elements.chartCanvas, {
             type: 'bar',
@@ -485,7 +494,7 @@ const metagameModule = {
         });
     },
 
-    // ── Legacy Stats (kept for backward compat) ────
+    // -- Legacy Stats (kept for backward compat) -----------
 
     calculateMetagameStats(data) {
         const gameCounts = {};
@@ -609,32 +618,22 @@ const metagameModule = {
             borderColor: player.fav_color,
             backgroundColor: hexToRgba(player.fav_color, 0.08),
             fill: true,
-            tension: 0.35,
+            tension: 0.3,
             pointRadius: 3,
+            pointHoverRadius: 5,
             borderWidth: 2
         }));
 
-        return { labels: dates, datasets };
+        return { dates, datasets };
     },
-
-    // ── No Data State ──────────────────────────────
 
     showNoData() {
         if (this.elements.statsContainer) {
-            this.elements.statsContainer.innerHTML = '';
-            this.elements.statsContainer.appendChild(
-                createEmptyState('📈', 'No metagame data for current filters.')
-            );
+            this.elements.statsContainer.innerHTML = '<div class="empty-state">No metagame data matches current filters</div>';
         }
-
         if (this.elements.chart) {
             this.elements.chart.destroy();
             this.elements.chart = null;
-        }
-
-        const chartParent = this.elements.chartCanvas?.parentElement;
-        if (chartParent && !chartParent.querySelector('.empty-state')) {
-            chartParent.appendChild(createEmptyState('📊', 'Adjust filters to see insights.'));
         }
     }
 };
