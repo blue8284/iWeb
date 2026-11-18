@@ -1,5 +1,5 @@
 // ============================================================================
-// Main application controller
+// Main application controller — v2 (Drawer + Hero + Transitions)
 // ============================================================================
 
 const app = {
@@ -15,23 +15,18 @@ const app = {
 
     async init() {
         console.log('🚀 Initializing Board Game Dashboard...');
-
-        // Show splash / loading header
         this.showSplash();
 
         try {
             this.modules.data = await dataModule.init();
-
             await this.initModules();
             this.renderHeaderAvatars();
-
             this.setupFilterHandlers();
             this.setupTabs();
             this.setupTheme();
 
             await this.renderAll();
-
-            // Apply entrance animations after everything is rendered
+            this.updateHeroStats();
             this.applyEntranceAnimations();
 
             console.log('✅ Dashboard initialized successfully!');
@@ -41,9 +36,8 @@ const app = {
         }
     },
 
-    // Show a brief splash effect in the header
     showSplash() {
-        const title = document.querySelector('.dashboard-header h1');
+        const title = document.querySelector('.header-title-block h1');
         if (title) {
             title.style.opacity = '0';
             title.style.transform = 'translateY(-4px)';
@@ -92,8 +86,12 @@ const app = {
 
     setupFilterHandlers() {
         filtersModule.onFiltersChanged = () => {
+            filtersModule.updateFilterIndicators();
             this.renderAll();
+            this.updateHeroStats();
         };
+        // Initial indicator update
+        filtersModule.updateFilterIndicators();
     },
 
     setupTabs() {
@@ -103,22 +101,27 @@ const app = {
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const targetId = button.dataset.tab;
+
                 buttons.forEach(btn => btn.classList.toggle('active', btn === button));
-                panels.forEach(panel => panel.classList.toggle('active', panel.id === targetId));
+
+                panels.forEach(panel => {
+                    const isTarget = panel.id === targetId;
+                    panel.classList.toggle('active', isTarget);
+                });
 
                 // Dim date range filter for tabs that show all-time data
                 const ignoreDateTabs = ['metagameModule', 'attributesModule'];
                 filtersModule.setDateRangeEnabled(!ignoreDateTabs.includes(targetId));
 
-                // Chart.js resize after activation + brief delay for layout settle
+                // Chart.js resize after activation
                 setTimeout(() => {
                     if (this.modules.arena?.elements?.chart) this.modules.arena.elements.chart.resize();
                     if (this.modules.rivalries?.elements?.chart) this.modules.rivalries.elements.chart.resize();
-                    if (this.modules.attributes?.radarCharts?.length) {
-                        this.modules.attributes.radarCharts.forEach(c => { if (c) c.resize(); });
+                    if (this.modules.attributes?.elements?.radarCharts?.length) {
+                        this.modules.attributes.elements.radarCharts.forEach(c => { if (c) c.resize(); });
                     }
                     if (this.modules.metagame?.elements?.chart) this.modules.metagame.elements.chart.resize();
-                }, 50);
+                }, 60);
             });
         });
     },
@@ -131,6 +134,9 @@ const app = {
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             toggleBtn.textContent = '☀️';
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            toggleBtn.textContent = '🌙';
         }
         this.syncJsTheme();
 
@@ -166,6 +172,65 @@ const app = {
         }
     },
 
+    // ── Hero Live Stats ──────────────────────────
+
+    updateHeroStats() {
+        const container = document.getElementById('heroLiveStats');
+        const subtitleEl = document.getElementById('heroSubtitle');
+        if (!container) return;
+
+        const filters = filtersModule.getFilters();
+        const data = dataModule.getFilteredData(filters);
+
+        container.innerHTML = '';
+
+        if (data.length === 0) {
+            if (subtitleEl) subtitleEl.textContent = 'No games in selected range';
+            return;
+        }
+
+        // Calculate quick stats
+        const totalGames = new Set(data.map(r => r['table id'])).size;
+        const totalWins = data.filter(r => r['is win'] === '1').length;
+        const uniquePlayers = new Set(data.map(r => r.name)).size;
+
+        // Find hottest player (most wins in period)
+        const winsByPlayer = {};
+        data.forEach(r => {
+            if (r['is win'] === '1') {
+                winsByPlayer[r.name] = (winsByPlayer[r.name] || 0) + 1;
+            }
+        });
+        const hottestEntry = Object.entries(winsByPlayer).sort((a, b) => b[1] - a[1])[0];
+        const hottestPlayer = hottestEntry ? dataModule.getUniquePlayers().find(p => p.username === hottestEntry[0]) : null;
+
+        // Update subtitle
+        if (subtitleEl) {
+            if (hottestPlayer) {
+                subtitleEl.textContent = `🔥 ${hottestPlayer.display_name} leads with ${hottestEntry[1]} wins`;
+            } else {
+                subtitleEl.textContent = 'Recent Performance';
+            }
+        }
+
+        // Build pills
+        const stats = [
+            { value: totalGames, label: 'Games' },
+            { value: totalWins, label: 'Wins' },
+            { value: uniquePlayers, label: 'Players' }
+        ];
+
+        stats.forEach(s => {
+            const pill = document.createElement('div');
+            pill.className = 'hero-stat-pill';
+            pill.innerHTML = `
+                <span class="hero-stat-value">${s.value}</span>
+                <span class="hero-stat-label">${s.label}</span>
+            `;
+            container.appendChild(pill);
+        });
+    },
+
     async renderAll() {
         console.log('🔄 Re-rendering all modules...');
 
@@ -174,23 +239,15 @@ const app = {
         await this.modules.attributes.render();
         await this.modules.metagame.render();
 
-        // Apply staggered animations to newly rendered content
         this.applyEntranceAnimations();
-
         console.log('✅ Re-render complete');
     },
 
-    // Apply staggered entrance animations to all rendered content
     applyEntranceAnimations() {
-        // Animate stat cards with stagger
         animateStaggered('.stat-card', 'animate-fade-in-up', 0.07);
-
-        // Animate chart containers
         document.querySelectorAll('.chart-container').forEach(el => {
             el.classList.add('animate-fade-in');
         });
-
-        // Animate tables
         document.querySelectorAll('.table-container').forEach(el => {
             el.classList.add('animate-fade-in-up');
         });

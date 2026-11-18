@@ -279,8 +279,9 @@ const dataModule = {
                 if (record['is win'] !== '1') return false;
             }
             
-            // Show retired games toggle
-            if (!filters.showRetiredGames && !record.is_active_15) {
+            // Show retired games toggle — skip only when no specific game is selected
+            if (!filters.showRetiredGames && !record.is_active_15
+                && (!filters.games || filters.games.length === 0)) {
                 return false;
             }
             

@@ -95,13 +95,24 @@ const rivalriesModule = {
         });
 
         Object.values(gamesById).forEach(gameRows => {
-            // Compare every pair based on actual rank
+            // Compare every pair based on actual rank or score fallback
             for (let i = 0; i < gameRows.length; i++) {
                 for (let j = i + 1; j < gameRows.length; j++) {
                     const a = gameRows[i];
                     const b = gameRows[j];
-                    const rankA = parseInt(a.rank);
-                    const rankB = parseInt(b.rank);
+
+                    // Use rank if available, otherwise fall back to score (higher = better)
+                    let rankA = parseInt(a.rank);
+                    let rankB = parseInt(b.rank);
+
+                    if (isNaN(rankA) || isNaN(rankB)) {
+                        // Derive rank from score: higher score = better (lower rank)
+                        const scoreA = parseInt(a.score) || 0;
+                        const scoreB = parseInt(b.score) || 0;
+                        if (scoreA === scoreB) continue; // tie — skip
+                        rankA = scoreA >= scoreB ? 1 : 2;
+                        rankB = scoreA >= scoreB ? 2 : 1;
+                    }
 
                     // Lower rank = better (1 is best)
                     const better = rankA < rankB ? a : b;

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Game Competition Dashboard</title>
+    <title>Board Game Arena — Dashboard</title>
     <meta name="description" content="Interactive dashboard tracking board game competition metrics — win rates, rivalries, and metagame insights.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -17,35 +17,60 @@
 </head>
 <body>
     <div class="dashboard">
+        <!-- ═══ HEADER ═══ -->
         <header class="dashboard-header">
-            <div class="header-brand">
-                <div class="logo-slot" id="logoSack">
-                    <img id="dashboardLogo" src="" alt="Logo" style="display:none;">
-                    <div class="logo-placeholder">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <rect width="32" height="32" rx="6" fill="rgba(255,255,255,0.22)"/>
-                            <path d="M16 6L20 14H12L16 6Z" fill="#ffffff" opacity="0.9"/>
-                            <path d="M10 14H22L20 22H12L10 14Z" fill="#ffffff" opacity="0.7"/>
-                            <rect x="14" y="22" width="4" height="4" rx="1" fill="#ffffff" opacity="0.5"/>
-                        </svg>
+            <div class="header-left">
+                <button class="filter-toggle" id="filterToggle" title="Toggle Filters" aria-label="Toggle filters panel">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="5" x2="17" y2="5"/>
+                        <line x1="5" y1="10" x2="15" y2="10"/>
+                        <line x1="7" y1="15" x2="13" y2="15"/>
+                    </svg>
+                    <span class="filter-badge" id="filterBadge" style="display:none;">0</span>
+                </button>
+                <div class="header-brand">
+                    <div class="logo-slot" id="logoSack">
+                        <img id="dashboardLogo" src="" alt="Logo" style="display:none;">
+                        <div class="logo-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="8" fill="rgba(255,255,255,0.15)"/>
+                                <path d="M10 22L16 8L22 22H10Z" fill="url(#logoGrad)" opacity="0.9"/>
+                                <defs><linearGradient id="logoGrad" x1="10" y1="22" x2="22" y2="8">
+                                    <stop stop-color="#38bdf8"/><stop offset="1" stop-color="#c084fc"/>
+                                </linearGradient></defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header-title-block">
+                        <h1>Game Night</h1>
+                        <p class="header-tagline">Live standings · Win streaks · Analytics</p>
                     </div>
                 </div>
-                <h1>Board Game Competition</h1>
             </div>
-            <div class="header-controls">
+            <div class="header-center">
+                <!-- Active filter tags shown here -->
+                <div class="active-filters" id="activeFilters"></div>
+            </div>
+            <div class="header-right">
                 <div class="header-avatars" id="headerAvatars" aria-label="Active players"></div>
-                <button class="btn theme-toggle" id="themeToggle" title="Toggle dark mode">☀️</button>
+                <button class="btn-icon theme-toggle" id="themeToggle" title="Toggle dark mode">☀️</button>
             </div>
         </header>
 
-        <aside class="filters-panel">
-            <h2>🎛️ Filters</h2>
+        <!-- ═══ FILTER DRAWER ═══ -->
+        <div class="filter-backdrop" id="filterBackdrop"></div>
+        <aside class="filters-panel" id="filtersPanel">
+            <div class="filters-header">
+                <h2>🎛️ Filters</h2>
+                <button class="btn-icon filter-close" id="filterClose" title="Close">✕</button>
+            </div>
 
             <div class="filter-group">
-                <label for="gameFilter">🎲 Game</label>
-                <input type="text" id="gameSearch" placeholder="Search games..." style="margin-bottom: 0.5rem;">
-                <select id="gameFilter" multiple></select>
-                <label style="margin-top: 0.5rem;">
+                <label>🎲 Game</label>
+                <input type="text" id="gameSearch" placeholder="Search games..." autocomplete="off">
+                <div class="game-tags-container" id="gameTagsContainer"></div>
+                <select id="gameFilter" multiple style="display:none;"></select>
+                <label class="filter-checkbox-label">
                     <input type="checkbox" id="showRetiredGames"> Show retired games
                 </label>
             </div>
@@ -56,7 +81,13 @@
             </div>
 
             <div class="filter-group" id="dateRangeGroup">
-                <label for="dateRange">📅 Date Range</label>
+                <label>📅 Date Range</label>
+                <div class="date-presets">
+                    <button class="preset-btn" data-range="7">7D</button>
+                    <button class="preset-btn active" data-range="30">30D</button>
+                    <button class="preset-btn" data-range="90">90D</button>
+                    <button class="preset-btn" data-range="all">All</button>
+                </div>
                 <div class="date-inputs">
                     <input type="date" id="dateFrom" placeholder="From">
                     <input type="date" id="dateTo" placeholder="To" max="">
@@ -64,71 +95,51 @@
             </div>
 
             <div class="filter-group">
-                <label>
-                    <input type="checkbox" id="winsOnly"> 🏆 Show Wins Only
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" id="winsOnly"> 🏆 Wins Only
                 </label>
             </div>
 
-            <button class="btn btn-secondary" id="resetFilters">↺ Reset Filters</button>
+            <button class="btn btn-secondary" id="resetFilters">↺ Reset All Filters</button>
         </aside>
 
+        <!-- ═══ MAIN CONTENT ═══ -->
         <main class="dashboard-content">
             <nav class="tabs-nav" aria-label="Dashboard sections">
-                <button class="tab-btn active" data-tab="arenaModule">🏟️ Arena</button>
-                <button class="tab-btn" data-tab="rivalriesModule">⚔️ Rivalries</button>
-                <button class="tab-btn" data-tab="metagameModule">📈 Metagame</button>
-                <button class="tab-btn" data-tab="attributesModule">🧠 Analysis</button>
+                <button class="tab-btn active" data-tab="arenaModule">
+                    <span class="tab-icon">🏟️</span>
+                    <span class="tab-label">Arena</span>
+                </button>
+                <button class="tab-btn" data-tab="rivalriesModule">
+                    <span class="tab-icon">⚔️</span>
+                    <span class="tab-label">Rivalries</span>
+                </button>
+                <button class="tab-btn" data-tab="metagameModule">
+                    <span class="tab-icon">📈</span>
+                    <span class="tab-label">Metagame</span>
+                </button>
+                <button class="tab-btn" data-tab="attributesModule">
+                    <span class="tab-icon">🧠</span>
+                    <span class="tab-label">Analysis</span>
+                </button>
             </nav>
 
             <!-- Arena Module -->
             <section class="module tab-panel active" id="arenaModule">
-                <div class="arena-hero-banner" aria-hidden="true">
-                    <svg viewBox="0 0 640 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
-                                <stop offset="50%" stop-color="#818cf8" stop-opacity="0.24"/>
-                                <stop offset="100%" stop-color="#c084fc" stop-opacity="0.28"/>
-                            </linearGradient>
-                            <linearGradient id="pieceGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#38bdf8"/>
-                                <stop offset="100%" stop-color="#818cf8"/>
-                            </linearGradient>
-                            <linearGradient id="pieceGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#818cf8"/>
-                                <stop offset="100%" stop-color="#c084fc"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="640" height="120" rx="12" fill="url(#heroGrad)"/>
-                        <!-- Playing Cards -->
-                        <g transform="translate(460, 18) rotate(-10)">
-                            <rect width="40" height="56" rx="6" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-                            <circle cx="20" cy="28" r="8" fill="#38bdf8" opacity="0.65"/>
-                        </g>
-                        <g transform="translate(486, 24) rotate(8)">
-                            <rect width="40" height="56" rx="6" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
-                            <path d="M20 18 L27 28 L20 38 L13 28 Z" fill="#c084fc" opacity="0.75"/>
-                        </g>
-                        <!-- Dice -->
-                        <g transform="translate(545, 32) rotate(14)">
-                            <rect width="44" height="44" rx="9" fill="url(#pieceGrad1)" opacity="0.9"/>
-                            <circle cx="13" cy="13" r="3" fill="#ffffff"/>
-                            <circle cx="31" cy="13" r="3" fill="#ffffff"/>
-                            <circle cx="22" cy="22" r="3" fill="#ffffff"/>
-                            <circle cx="13" cy="31" r="3" fill="#ffffff"/>
-                            <circle cx="31" cy="31" r="3" fill="#ffffff"/>
-                        </g>
-                        <!-- Meeple -->
-                        <g transform="translate(392, 30)">
-                            <circle cx="24" cy="14" r="9" fill="url(#pieceGrad2)"/>
-                            <path d="M10 34 C10 24, 38 24, 38 34 L43 56 L30 56 L27 44 L21 44 L18 56 L5 56 Z" fill="url(#pieceGrad2)" opacity="0.9"/>
-                        </g>
-                        <!-- Hero Title -->
-                        <text x="28" y="54" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="currentColor" letter-spacing="-0.02em">Game Night</text>
-                        <text x="28" y="78" font-family="Inter, sans-serif" font-size="13" fill="currentColor" opacity="0.78">Live standings, win streaks &amp; table highlights</text>
-                    </svg>
+                <div class="arena-hero-banner" id="heroArenaBanner">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Arena</h2>
+                            <p class="hero-subtitle" id="heroSubtitle">Recent Performance</p>
+                        </div>
+                        <div class="hero-live-stats" id="heroLiveStats"></div>
+                    </div>
+                    <div class="hero-bg-shapes" aria-hidden="true">
+                        <div class="hero-shape shape-1"></div>
+                        <div class="hero-shape shape-2"></div>
+                        <div class="hero-shape shape-3"></div>
+                    </div>
                 </div>
-                <h2>🏟️ Arena: Recent Performance</h2>
                 <div class="module-header">
                     <div id="arenaStats"></div>
                 </div>
